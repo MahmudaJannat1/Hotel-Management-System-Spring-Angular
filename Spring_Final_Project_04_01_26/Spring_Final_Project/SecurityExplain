@@ -1,0 +1,29 @@
+ঠিক আছে! 😊 তুমি এখন run করতে পারছো, তাই আমরা step by step নিশ্চিত করতে পারি যে Spring Security + JWT authentication ঠিকমতো কাজ করছে। আমি প্রথমে সংক্ষেপে flow and setup remind করি, তারপর বলব কীভাবে test করতে হবে।
+
+১️⃣ Security Flow Reminder
+
+User entity আছে যেটার username, password, এবং roles আছে।
+
+Role entity আছে, RoleType enum ব্যবহার।
+
+JWT Authentication:
+
+/api/auth/login বা /api/auth/** endpoint এ request করলে token generate হবে।
+
+JwtUtil token তৈরি করে এবং validate করে।
+
+JwtAuthFilter request এ Authorization header (Bearer token) check করে।
+
+Password Encoding:
+
+BCryptPasswordEncoder ব্যবহার হচ্ছে।
+
+Login request এ password match করে।
+
+SecurityConfig:
+
+/api/auth/** ও /h2-console/** public।
+
+বাকি সব routes protected।
+
+JwtAuthFilter UsernamePasswordAuthenticationFilter এর আগে run হয়।
