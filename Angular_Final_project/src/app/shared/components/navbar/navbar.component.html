@@ -1,0 +1,169 @@
+
+
+
+<nav class="navbar">
+  <!-- Logo/Brand -->
+  <div class="nav-brand">
+    <a routerLink="/" class="brand-link">
+      <i class="fas fa-hotel brand-icon"></i>
+      <span class="brand-text"><span class="brand-highlight">ROLEX HOTEL</span></span>
+    </a>
+  </div>
+
+  <!-- Main Navigation Links -->
+  <div class="nav-links">
+    <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <i class="fas fa-home link-icon"></i>
+      <span class="link-text">Home</span>
+    </a>
+
+    <a routerLink="/rooms/" class="nav-link" routerLinkActive="active">
+      <i class="fas fa-bed link-icon"></i>
+      <span class="link-text">Rooms</span>
+    </a>
+
+    <a routerLink="/contact" class="nav-link" routerLinkActive="active">
+      <i class="fas fa-envelope link-icon"></i>
+      <span class="link-text">Contact</span>
+    </a>
+  </div>
+
+  <!-- User/Auth Section -->
+  <div class="nav-auth">
+    <!-- Not Logged In -->
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/auth/login" class="auth-link login-link">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+      </a>
+
+      <a routerLink="/auth/register" class="auth-link register-link">
+        <i class="fas fa-user-plus"></i>
+        <span>Register</span>
+      </a>
+    </ng-container>
+
+    <!-- Logged In -->
+    <ng-container *ngIf="isLoggedIn">
+      <!-- Dashboard Links -->
+      <div class="dashboard-links">
+        <a *ngIf="role === 'ROLE_ADMIN'" routerLink="/admin/dashboard" class="dashboard-link admin">
+          <i class="fas fa-crown"></i>
+          <span>Admin Dashboard</span>
+        </a>
+
+        <a *ngIf="role === 'ROLE_MODERATOR'" routerLink="/moderator/dashboard" class="dashboard-link moderator">
+          <i class="fas fa-shield-alt"></i>
+          <span>Moderator Dashboard</span>
+        </a>
+
+        <a *ngIf="role === 'ROLE_USER'" routerLink="/user/dashboard" class="dashboard-link user">
+          <i class="fas fa-user"></i>
+          <span>User Dashboard</span>
+        </a>
+
+      </div>
+
+      <!-- User Profile Dropdown (Optional) -->
+      <div class="user-profile">
+        <div class="profile-toggle">
+          <div class="profile-avatar">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <span class="profile-name">Welcome!</span>
+          <i class="fas fa-chevron-down dropdown-arrow"></i>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="profile-dropdown">
+          <button class="dropdown-item" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Logout Button -->
+      <button class="logout-btn-mobile" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </button>
+    </ng-container>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.open]="isMenuOpen">
+  <div class="mobile-menu-header">
+    <div class="mobile-brand">
+      <i class="fas fa-hotel"></i>
+      <span>HotelHub</span>
+    </div>
+    <button class="close-menu" (click)="toggleMenu()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="mobile-links">
+    <a routerLink="/" class="mobile-link" (click)="toggleMenu()">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+
+    <a routerLink="/rooms" class="mobile-link" (click)="toggleMenu()">
+      <i class="fas fa-bed"></i>
+      <span>Rooms</span>
+    </a>
+
+    <a routerLink="/contact" class="mobile-link" (click)="toggleMenu()">
+      <i class="fas fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+
+    <!-- Mobile Auth Links -->
+    <div class="mobile-auth" *ngIf="!isLoggedIn">
+      <a routerLink="/auth/login" class="mobile-auth-link login" (click)="toggleMenu()">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+      </a>
+
+      <a routerLink="/auth/register" class="mobile-auth-link register" (click)="toggleMenu()">
+        <i class="fas fa-user-plus"></i>
+        <span>Register</span>
+      </a>
+    </div>
+
+    <!-- Mobile Dashboard Links -->
+    <div class="mobile-dashboard" *ngIf="isLoggedIn">
+      <a *ngIf="role === 'ROLE_ADMIN'" routerLink="/dashboard/admin" class="mobile-dashboard-link"
+        (click)="toggleMenu()">
+        <i class="fas fa-crown"></i>
+        <span>Admin Dashboard</span>
+      </a>
+
+      <a *ngIf="role === 'ROLE_USER'" routerLink="/dashboard/user" class="mobile-dashboard-link" (click)="toggleMenu()">
+        <i class="fas fa-user"></i>
+        <span>User Dashboard</span>
+      </a>
+
+      <a *ngIf="role === 'ROLE_MODERATOR'" routerLink="/dashboard/moderator" class="mobile-dashboard-link"
+        (click)="toggleMenu()">
+        <i class="fas fa-shield-alt"></i>
+        <span>Moderator Dashboard</span>
+      </a>
+
+      <button class="mobile-logout" (click)="logout(); toggleMenu()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </button>
+    </div>
+  </div>
+</div>

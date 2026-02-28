@@ -1,0 +1,82 @@
+<app-sidebar></app-sidebar>
+<div class="page-wrapper">
+  <h2 class="page-title">Asset Maintenance Logs</h2>
+
+  <div class="table-card" *ngIf="logs.length > 0">
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Asset</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th class="actions-col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let log of logs">
+          <td>{{ log.id }}</td>
+
+          <!-- Asset Name -->
+          <td *ngIf="editingLogId !== log.id"
+              class="link"
+              (click)="viewDetails(log.id)">
+            {{ log.assetName }}
+          </td>
+          <td *ngIf="editingLogId === log.id">
+            <input [(ngModel)]="log.assetName" />
+          </td>
+
+          <!-- Description -->
+          <td *ngIf="editingLogId !== log.id">
+            {{ log.description }}
+          </td>
+          <td *ngIf="editingLogId === log.id">
+            <input [(ngModel)]="log.description" />
+          </td>
+
+          <!-- Date -->
+          <td>{{ log.maintenanceDate | date:'short' }}</td>
+
+          <!-- Actions -->
+          <td class="actions">
+            <button class="btn edit"
+              *ngIf="editingLogId !== log.id"
+              (click)="startEdit(log.id)">
+              Edit
+            </button>
+
+            <button class="btn update"
+              *ngIf="editingLogId === log.id"
+              (click)="updateLog(log)">
+              Update
+            </button>
+
+            <button class="btn cancel"
+              *ngIf="editingLogId === log.id"
+              (click)="cancelEdit()">
+              Cancel
+            </button>
+
+            <button class="btn delete"
+              (click)="deleteLog(log.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p *ngIf="logs.length === 0" class="empty">
+    No maintenance logs found.
+  </p>
+
+  <!-- Form section -->
+  <div class="form-section">
+    <app-asset-log-form (saved)="loadLogs()"></app-asset-log-form>
+  </div>
+</div>

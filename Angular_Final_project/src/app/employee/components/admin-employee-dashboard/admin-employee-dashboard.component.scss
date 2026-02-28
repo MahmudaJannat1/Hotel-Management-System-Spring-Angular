@@ -1,0 +1,102 @@
+/* Main content beside sidebar */
+.content-wrapper {
+  margin-left: 260px; /* sidebar width */
+  padding: 30px;
+  background: #f4f6f9;
+
+}
+
+/* Loading spinner */
+.loading {
+  font-size: 18px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Dashboard title */
+.dashboard-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1f2937;
+}
+
+/* Grid cards */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card styling */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* Card titles */
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f2937;
+}
+
+/* Card paragraphs */
+.card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #4b5563;
+}
+
+/* Card buttons */
+.card button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59,130,246,0.35);
+}
+
+/* Optional card specific colors */
+.employee-card { border-top: 4px solid #3b82f6; }
+.attendance-card { border-top: 4px solid #10b981; }
+.tasks-card { border-top: 4px solid #f59e0b; }
+.payroll-card { border-top: 4px solid #ef4444; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .content-wrapper {
+    margin-left: 0;
+    padding: 16px;
+  }
+}

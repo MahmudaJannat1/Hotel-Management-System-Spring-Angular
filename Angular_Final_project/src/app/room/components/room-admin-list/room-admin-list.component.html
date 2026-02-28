@@ -1,0 +1,43 @@
+
+<app-sidebar></app-sidebar>
+<div class="room-management">
+  <div class="header">
+    <h2>Room Management</h2>
+    <button (click)="createRoom()" class="btn primary">+ Create Room</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading rooms...</div>
+
+  <table *ngIf="!loading && rooms.length > 0" class="room-table">
+    <thead>
+      <tr>
+        <th>Room No</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Floor</th>
+        <th class="actions-col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of rooms">
+        <td>{{ room.roomNumber }}</td>
+        <td>{{ room.roomType.name }}</td>
+        <td>
+          <span class="status" [ngClass]="room.status.toLowerCase()">
+            {{ room.status }}
+          </span>
+        </td>
+        <td>{{ room.floor }}</td>
+        <td class="action-buttons">
+          <button class="btn outline" (click)="editRoom(room.id)">Edit</button>
+          <button class="btn outline" (click)="uploadRoomImage(room.id)">Image</button>
+          <button class="btn danger" (click)="deleteRoom(room.id)">Disable</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && rooms.length === 0" class="no-rooms">
+    No rooms available
+  </div>
+</div>

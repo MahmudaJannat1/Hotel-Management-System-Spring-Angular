@@ -1,0 +1,139 @@
+/* Content wrapper */
+.content-wrapper {
+  margin-left: 260px; /* sidebar width */
+  padding: 30px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Page header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Primary button */
+.btn-primary {
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(59,130,246,0.35);
+}
+
+/* Table card */
+.table-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+/* Table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.custom-table thead {
+  background: #f1f5f9;
+}
+
+.custom-table th {
+  font-weight: 700;
+  color: #374151;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge.info {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.badge.neutral {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Empty state */
+.empty-state {
+  margin-top: 60px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-state i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+<h2>Housekeeping Stats</h2>
+<div *ngIf="stats">
+  <h3>Tasks</h3>
+  <p>Total: {{stats.totalTasks}}</p>
+  <p>Pending: {{stats.pendingTasks}}</p>
+  <p>In Progress: {{stats.inProgressTasks}}</p>
+  <p>Completed: {{stats.completedTasks}}</p>
+
+  <h3>Laundry</h3>
+  <p>Total: {{stats.totalLaundryRequests}}</p>
+  <p>Pending: {{stats.pendingLaundryRequests}}</p>
+  <p>Done: {{stats.doneLaundryRequests}}</p>
+
+  <h3>Maintenance</h3>
+  <p>Total: {{stats.totalMaintenanceRequests}}</p>
+  <p>Pending: {{stats.pendingMaintenanceRequests}}</p>
+  <p>Done: {{stats.doneMaintenanceRequests}}</p>
+
+  <h3>Asset Maintenance Logs</h3>
+  <p>Total: {{stats.totalAssetMaintenanceLogs}}</p>
+</div>
+<div *ngIf="!stats">
+  <p>Loading stats...</p>
+</div>

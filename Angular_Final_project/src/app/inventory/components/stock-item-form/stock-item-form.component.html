@@ -1,0 +1,39 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+  <div class="form-card">
+    <h2>{{ id ? 'Edit' : 'Add' }} Stock Item</h2>
+
+    <form (ngSubmit)="submit()" class="stock-form">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="model.name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" [(ngModel)]="model.quantity" name="quantity" required />
+      </div>
+
+      <div class="form-group">
+        <label>Min Quantity</label>
+        <input type="number" [(ngModel)]="model.minQuantity" name="minQuantity" />
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select [(ngModel)]="model.categoryId" name="categoryId" required>
+          <option *ngFor="let c of categories" [ngValue]="c.id">{{ c.name }}</option>
+        </select>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="loading">{{ loading ? 'Saving...' : 'Save' }}</button>
+        <a routerLink="/inventory/stock/list">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>

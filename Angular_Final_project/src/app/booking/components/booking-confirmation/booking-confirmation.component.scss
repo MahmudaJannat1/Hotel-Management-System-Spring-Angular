@@ -1,0 +1,105 @@
+/* HERO */
+.confirmation-hero {
+  height: 40vh;
+  background: url('/assets/hotelview.jpg') center / cover no-repeat;
+  position: relative;
+  padding-top: 120px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.5);
+}
+
+/* LOADING */
+.loading {
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* WRAPPER */
+.confirmation-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.confirmation-card {
+  width: 900px;
+  background: #f5f2ec;
+  padding: 40px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.title {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+.title span {
+  font-size: 14px;
+  color: #8a6d3b;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 40px;
+  margin-bottom: 30px;
+}
+
+.info-grid p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* ITEMS */
+.sub-title {
+  margin: 30px 0 15px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #f1efe9;
+}
+
+/* ACTIONS */
+.actions {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.actions button {
+  background: #0b2e2e;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #123b3b;
+}

@@ -1,0 +1,83 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h2>
+      <i class="fas fa-money-check-alt"></i>
+      Payroll Management
+    </h2>
+
+    <button
+      class="btn-primary"
+      routerLink="/employee/admin/payroll/create"
+    >
+      <i class="fas fa-plus"></i> Add Payroll
+    </button>
+  </div>
+
+  <!-- Table Card -->
+  <div class="table-card">
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Month</th>
+          <th>Net Salary</th>
+          <th>Status</th>
+          <th>Method</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of payrolls">
+
+          <td>#{{ p.employeeId }}</td>
+          <td class="emp-name">{{ p.employeeName }}</td>
+          <td>{{ p.month }}</td>
+
+          <td class="salary">
+            ৳ {{ p.netSalary | number }}
+          </td>
+
+          <td>
+            <span class="status-badge" [ngClass]="p.status.toLowerCase()">
+              {{ p.status }}
+            </span>
+          </td>
+
+          <td>
+            <span class="method-pill">
+              {{ p.salaryType }}
+            </span>
+          </td>
+
+          <td class="actions">
+            <button class="icon-btn edit" (click)="edit(p.id!)">
+              <i class="fas fa-edit"></i>
+            </button>
+
+            <button class="icon-btn delete" (click)="delete(p.id!)">
+              <i class="fas fa-trash"></i>
+            </button>
+
+            <button class="icon-btn download" (click)="downloadPayslip(p.id)">
+              <i class="fas fa-download"></i>
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="payrolls.length === 0" class="empty-text">
+      No payroll records found.
+    </p>
+
+  </div>
+
+</div>

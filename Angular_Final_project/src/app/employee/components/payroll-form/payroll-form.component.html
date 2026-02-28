@@ -1,0 +1,83 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <div class="form-card">
+    <h2>
+      <i class="fas fa-file-invoice-dollar"></i>
+      Payroll Entry
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="payroll-form">
+
+      <!-- Employee -->
+      <div class="form-group">
+        <label>Employee</label>
+        <select formControlName="employeeId">
+          <option value="">Select Employee</option>
+          <option *ngFor="let e of employees" [value]="e.id">
+            {{ e.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Salary Row -->
+      <div class="grid-3">
+        <div class="form-group">
+          <label>Base Salary</label>
+          <input type="number" formControlName="baseSalary" placeholder="৳ Base Salary">
+        </div>
+
+        <div class="form-group">
+          <label>Bonus</label>
+          <input type="number" formControlName="bonus" placeholder="৳ Bonus">
+        </div>
+
+        <div class="form-group">
+          <label>Deduction</label>
+          <input type="number" formControlName="deduction" placeholder="৳ Deduction">
+        </div>
+      </div>
+
+      <!-- Net Salary -->
+      <div class="form-group highlight">
+        <label>Net Salary</label>
+        <input type="number" formControlName="netSalary" readonly>
+      </div>
+
+      <!-- Status & Method -->
+      <div class="grid-2">
+        <div class="form-group">
+          <label>Status</label>
+          <select formControlName="status">
+            <option value="">Select Status</option>
+            <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Method</label>
+          <select formControlName="salaryType">
+            <option value="">Select Method</option>
+            <option *ngFor="let m of methods" [value]="m">{{ m }}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Payment Date -->
+      <div class="form-group">
+        <label>Payment Date</label>
+        <input type="date" formControlName="paymentDate">
+      </div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <button type="submit" class="btn-save">
+          <i class="fas fa-save"></i> Save Payroll
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

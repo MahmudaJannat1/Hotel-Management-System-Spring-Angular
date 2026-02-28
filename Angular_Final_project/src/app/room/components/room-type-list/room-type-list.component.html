@@ -1,0 +1,14 @@
+<div class="room-type-container">
+  <h2>Room Types</h2>
+  <button (click)="goToCreate()">Create New Room Type</button>
+
+  <div *ngIf="loading">Loading room types...</div>
+  <div *ngIf="!loading && roomTypes.length === 0">No room types available</div>
+
+  <ul *ngIf="!loading && roomTypes.length > 0">
+    <li *ngFor="let type of roomTypes">
+      <strong>{{ type.name }}</strong> - {{ type.description || 'No description' }}
+    </li>
+  </ul>
+</div>
+<!-- <button (click)="goToCreate()">Create New Room Type</button> -->

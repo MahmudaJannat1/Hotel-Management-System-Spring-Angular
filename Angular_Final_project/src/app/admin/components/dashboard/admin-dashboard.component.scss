@@ -1,0 +1,156 @@
+.dashboard-container {
+  margin-left: 260px; /* sidebar width */
+  padding: 32px;
+  background: #f1f5f9;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dashboard-subtitle {
+  margin-top: 6px;
+  color: #64748b;
+}
+
+.current-time {
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 26px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 26px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(15,23,42,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 55px rgba(15,23,42,0.15);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+}
+.card-body {
+  padding: 20px 24px;
+}
+
+.stat-row,
+.sub-stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #475569;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.stat-section {
+  margin-top: 12px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.highlight {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 10px;
+}
+.card-footer {
+  padding: 18px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.card-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.card-btn:hover {
+  opacity: 0.9;
+}
+.pending { color: #f59e0b; }
+.confirmed, .completed, .success, .paid { color: #16a34a; }
+.cancelled, .failed, .danger { color: #dc2626; }
+.available, .active, .present { color: #22c55e; }
+.occupied, .inactive, .absent { color: #ef4444; }
+.warning { color: #eab308; }
+.in-progress { color: #3b82f6; }
+.salary { color: #0284c7; font-weight: 700; }
+.revenue { color: #0ea5e9; font-weight: 700; }
+.booking-card .card-icon { background: #6366f1; }
+.rooms-card .card-icon { background: #0ea5e9; }
+.payment-card .card-icon { background: #22c55e; }
+.customer-card .card-icon { background: #f97316; }
+.housekeeping-card .card-icon { background: #14b8a6; }
+.employee-card .card-icon { background: #a855f7; }
+.inventory-card .card-icon { background: #eab308; }
+.hotel-card .card-icon { background: #64748b; }
+.invoice-card .card-icon { background: #ef4444; }

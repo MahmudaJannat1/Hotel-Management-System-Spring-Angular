@@ -1,0 +1,322 @@
+<app-sidebar></app-sidebar>
+
+<div *ngIf="loading" class="loading-container">
+  <div class="spinner"></div>
+  <p>Loading Dashboard Data...</p>
+</div>
+
+<div *ngIf="!loading" class="dashboard-container">
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div class="header-left">
+      <h1 class="dashboard-title">
+        <i class="fas fa-tachometer-alt"></i> Admin Dashboard
+      </h1>
+      <p class="dashboard-subtitle">Welcome back! Here's what's happening today.</p>
+    </div>
+    <div class="header-right">
+      <div class="current-time">
+        <i class="fas fa-clock"></i> {{ currentTime | date:'medium' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    
+    <!-- Bookings Card -->
+    <div class="card booking-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <h3>Bookings</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total:</span>
+          <span class="stat-value">{{ data.bookingStats.totalBookings }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Pending:</span>
+          <span class="stat-value pending">{{ data.bookingStats.pendingBookings }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Confirmed:</span>
+          <span class="stat-value confirmed">{{ data.bookingStats.confirmedBookings }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Completed:</span>
+          <span class="stat-value completed">{{ data.bookingStats.completedBookings }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Cancelled:</span>
+          <span class="stat-value cancelled">{{ data.bookingStats.cancelledBookings }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('booking')">
+          <i class="fas fa-arrow-right"></i> Manage Bookings
+        </button>
+      </div>
+    </div>
+
+    <!-- Rooms Card -->
+    <div class="card rooms-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-bed"></i>
+        </div>
+        <h3>Rooms</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total:</span>
+          <span class="stat-value">{{ data.roomStats.totalRooms }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Available:</span>
+          <span class="stat-value available">{{ data.roomStats.availableRooms }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Occupied:</span>
+          <span class="stat-value occupied">{{ data.roomStats.occupiedRooms }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Maintenance:</span>
+          <span class="stat-value maintenance">{{ data.roomStats.maintenanceRooms }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('rooms')">
+          <i class="fas fa-arrow-right"></i> Manage Rooms
+        </button>
+      </div>
+    </div>
+
+    <!-- Payments Card -->
+    <div class="card payment-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-credit-card"></i>
+        </div>
+        <h3>Payments</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total Revenue:</span>
+          <span class="stat-value revenue">{{ data.paymentStats.totalRevenue | currency }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Successful:</span>
+          <span class="stat-value success">{{ data.paymentStats.successfulPayments }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Pending:</span>
+          <span class="stat-value pending">{{ data.paymentStats.pendingPayments }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Failed:</span>
+          <span class="stat-value failed">{{ data.paymentStats.failedPayments }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('payment')">
+          <i class="fas fa-arrow-right"></i> Manage Payments
+        </button>
+      </div>
+    </div>
+
+    <!-- Customers Card -->
+    <div class="card customer-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Customers</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total:</span>
+          <span class="stat-value">{{ data.customerStats.totalCustomers }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Active:</span>
+          <span class="stat-value active">{{ data.customerStats.activeCustomers }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Inactive:</span>
+          <span class="stat-value inactive">{{ data.customerStats.inactiveCustomers }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('customers')">
+          <i class="fas fa-arrow-right"></i> Manage Customers
+        </button>
+      </div>
+    </div>
+
+    <!-- Housekeeping Card -->
+    <div class="card housekeeping-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-broom"></i>
+        </div>
+        <h3>Housekeeping</h3>
+      </div>
+      <div class="card-body">       
+        <div class="stat-section">
+          <h4 class="section-title"></h4>
+          <div class="stat-row">
+            <span class="stat-label">Total Activities:</span>
+            <span class="stat-value">{{ data.housekeepingStats.totalTasks + data.housekeepingStats.totalLaundryRequests + data.housekeepingStats.totalMaintenanceRequests }}</span>
+          </div>
+          <div class="sub-stat">
+            <span class="stat-label">Pending Activities:</span>
+            <span class="stat-value pending">{{ data.housekeepingStats.pendingTasks + data.housekeepingStats.pendingLaundryRequests + data.housekeepingStats.pendingMaintenanceRequests }}</span>
+          </div>
+          <div class="sub-stat">
+            <span class="stat-label">In Progress Activities:</span>
+            <span class="stat-value in-progress">{{ data.housekeepingStats.inProgressTasks + data.housekeepingStats.inProgressLaundryRequests + data.housekeepingStats.inProgressMaintenanceRequests }}</span>
+          </div>
+          <div class="sub-stat">
+            <span class="stat-label">Completed:</span>
+            <span class="stat-value completed">{{ data.housekeepingStats.completedTasks }}</span>
+          </div>
+        </div>
+
+        
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('housekeeping')">
+          <i class="fas fa-arrow-right"></i> Manage Housekeeping
+        </button>
+      </div>
+    </div>
+
+    <!-- Employees Card -->
+    <div class="card employee-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3>Employees</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-section">
+          <div class="stat-row">
+            <span class="stat-label">Total Employees:</span>
+            <span class="stat-value">{{ data.employeeStats.totalEmployees }}</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Active:</span>
+            <span class="stat-value active">{{ data.employeeStats.activeEmployees }}</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Inactive:</span>
+            <span class="stat-value inactive">{{ data.employeeStats.inactiveEmployees }}</span>
+          </div>
+        </div>
+
+      
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('employee')">
+          <i class="fas fa-arrow-right"></i> Manage Employees
+        </button>
+      </div>
+    </div>
+
+    <!-- Inventory Card -->
+    <div class="card inventory-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <h3>Inventory</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total Items:</span>
+          <span class="stat-value">{{ data.inventoryStats.totalItems }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Low Stock:</span>
+          <span class="stat-value warning">{{ data.inventoryStats.lowStockItems }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Out of Stock:</span>
+          <span class="stat-value danger">{{ data.inventoryStats.outOfStockItems }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('inventory')">
+          <i class="fas fa-arrow-right"></i> Manage Inventory
+        </button>
+      </div>
+    </div>
+
+    <!-- Hotels Card -->
+    <div class="card hotel-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-hotel"></i>
+        </div>
+        <h3>Hotels</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total Hotels:</span>
+          <span class="stat-value">{{ data.hotelStats.totalHotels }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Active:</span>
+          <span class="stat-value active">{{ data.hotelStats.activeHotels }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Total Rooms:</span>
+          <span class="stat-value">{{ data.hotelStats.totalRooms }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Occupied:</span>
+          <span class="stat-value occupied">{{ data.hotelStats.occupiedRooms }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('hotels')">
+          <i class="fas fa-arrow-right"></i> Manage Hotels
+        </button>
+      </div>
+    </div>
+
+    <!-- Invoices Card -->
+    <div class="card invoice-card">
+      <div class="card-header">
+        <div class="card-icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <h3>Invoices</h3>
+      </div>
+      <div class="card-body">
+        <div class="stat-row">
+          <span class="stat-label">Total:</span>
+          <span class="stat-value">{{ data.invoiceStats.totalInvoices }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Paid:</span>
+          <span class="stat-value paid">{{ data.invoiceStats.paidInvoices }}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Unpaid:</span>
+          <span class="stat-value unpaid">{{ data.invoiceStats.unpaidInvoices }}</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="card-btn" (click)="goToModule('invoices')">
+          <i class="fas fa-arrow-right"></i> Manage Invoices
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

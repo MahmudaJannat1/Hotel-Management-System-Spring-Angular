@@ -1,0 +1,36 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+  <div class="page-header">
+    <h2>Stock Items</h2>
+    <a routerLink="/inventory/stock/new" class="btn-primary">Add Item</a>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <table *ngIf="!loading" class="admin-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Min Quantity</th>
+        <th>Category</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.minQuantity }}</td>
+        <td>{{ item.categoryName }}</td>
+        <td class="text-center">
+          <a [routerLink]="['/inventory/stock/edit', item.id]" class="icon-btn edit">Edit</a>
+          <button (click)="deleteItem(item.id)" class="icon-btn delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

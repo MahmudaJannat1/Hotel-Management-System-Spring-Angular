@@ -1,0 +1,60 @@
+<!-- ================= Stats Cards ================= -->
+ <app-sidebar></app-sidebar>
+<div class="pad">
+<div class="stats-grid grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+  <div class="stat-card p-4 bg-blue-100 rounded-md shadow text-center">
+    <h3 class="text-lg font-medium mb-2">Total Customers</h3>
+    <p class="text-2xl font-bold">{{ stats.totalCustomers }}</p>
+  </div>
+
+  <div class="stat-card p-4 bg-green-100 rounded-md shadow text-center">
+    <h3 class="text-lg font-medium mb-2">Active Customers</h3>
+    <p class="text-2xl font-bold">{{ stats.activeCustomers }}</p>
+  </div>
+
+  <div class="stat-card p-4 bg-red-100 rounded-md shadow text-center">
+    <h3 class="text-lg font-medium mb-2">Inactive Customers</h3>
+    <p class="text-2xl font-bold">{{ stats.inactiveCustomers }}</p>
+  </div>
+</div>
+
+<div class="page-header flex justify-between items-center mb-6">
+  <h2 class="text-2xl font-bold">Customers Dashboard</h2>
+  <button routerLink="/customers/new" class="btn btn-primary">
+    + Add Customer
+  </button>
+</div>
+<!-- ================= Customer List Table ================= -->
+<table class="table-auto w-full border border-gray-300 rounded-md">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 border">Name</th>
+      <th class="px-4 py-2 border">Email</th>
+      <th class="px-4 py-2 border">Phone</th>
+      <th class="px-4 py-2 border">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers" class="hover:bg-gray-50">
+      <td class="px-4 py-2 border">{{ customer.name }}</td>
+      <td class="px-4 py-2 border">{{ customer.email }}</td>
+      <td class="px-4 py-2 border">{{ customer.phone }}</td>
+      <td class="px-4 py-2 border space-x-2">
+        <button [routerLink]="['/customers/edit', customer.id]" class="btn btn-sm btn-warning">
+          Edit
+        </button>
+        <button (click)="deleteCustomer(customer.id)" class="btn btn-sm btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="admin-dashboard-container">
+  <a [routerLink]="['/admin/dashboard']" class="admin-dashboard-link">
+    Admin Dashboard
+  </a>
+</div>
+
+</div>

@@ -1,0 +1,408 @@
+// Variables
+$primary-color: #3b82f6;
+$primary-dark: #2563eb;
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+$light-bg: #f8fafc;
+$border-color: #e2e8f0;
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+$white: #ffffff;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$radius-md: 8px;
+$radius-lg: 12px;
+
+.pad{
+   padding: 24px;
+  margin-left: 250px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+// Stats Grid
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-card {
+  padding: 1.5rem;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+}
+
+// Background color variants
+.bg-blue-100 {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  
+  h3 {
+    color: #1e40af;
+  }
+  
+  p {
+    color: #1e3a8a;
+  }
+}
+
+.bg-green-100 {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  
+  h3 {
+    color: #065f46;
+  }
+  
+  p {
+    color: #064e3b;
+  }
+}
+
+.bg-red-100 {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  
+  h3 {
+    color: #991b1b;
+  }
+  
+  p {
+    color: #7f1d1d;
+  }
+}
+
+// Page Header
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+// Buttons
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: $radius-md;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &-primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-dark;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+  }
+
+  &-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  &-warning {
+    background-color: $warning-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($warning-color, 5%);
+    }
+  }
+
+  &-danger {
+    background-color: $danger-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($danger-color, 5%);
+    }
+  }
+}
+
+// Table
+.table-auto {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  background-color: $white;
+
+  thead {
+    background-color: #f9fafb;
+    
+    tr {
+      th {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-weight: 600;
+        color: $text-primary;
+        border-bottom: 1px solid $border-color;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: #f9fafb;
+      }
+      
+      &:not(:last-child) {
+        td {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+      
+      td {
+        padding: 1rem;
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+// Utility classes (to support Tailwind-like classes in your HTML)
+.space-x-2 {
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
+
+.hover\:bg-gray-50:hover {
+  background-color: #f9fafb;
+}
+
+.border {
+  border-color: $border-color;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.rounded-md {
+  border-radius: $radius-md;
+}
+
+.shadow {
+  box-shadow: $shadow-sm;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.md\:grid-cols-3 {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+// Admin link
+a[routerLink] {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: $radius-md;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $primary-dark;
+    background-color: #eff6ff;
+  }
+}
+
+// Container for the table
+:host {
+  display: block;
+  background-color: $light-bg;
+  min-height: 100vh;
+  padding: 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+/* Admin Dashboard Link Design */
+.admin-dashboard-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '←';
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    color: $primary-dark;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    transform: translateX(-3px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    
+    &:before {
+      transform: translateX(-3px);
+    }
+  }
+  
+  &:active {
+    transform: translateX(0);
+  }
+  
+  // Optional: Add a subtle animation
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Make sure the div has proper spacing
+.admin-dashboard-container {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+  text-align: right;
+}

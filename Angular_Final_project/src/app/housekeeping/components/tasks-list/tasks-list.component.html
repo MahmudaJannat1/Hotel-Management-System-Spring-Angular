@@ -1,0 +1,104 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <h2 class="page-title">
+    <i class="fas fa-broom"></i>
+    Housekeeping Tasks
+  </h2>
+
+  <div class="table-card" *ngIf="tasks.length > 0">
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Room</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Assigned To</th>
+          <th class="actions-col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let task of tasks">
+
+          <td>{{ task.id }}</td>
+
+          <td>
+            <span class="room-badge">
+              Room {{ task.roomId }}
+            </span>
+          </td>
+
+          <!-- Description -->
+          <td *ngIf="editingTaskId !== task.id">
+            {{ task.description }}
+          </td>
+          <td *ngIf="editingTaskId === task.id">
+            <input [(ngModel)]="task.description" />
+          </td>
+
+          <!-- Status -->
+          <td *ngIf="editingTaskId !== task.id">
+            <span class="status-badge" [ngClass]="task.status.toLowerCase()">
+              {{ task.status }}
+            </span>
+          </td>
+          <td *ngIf="editingTaskId === task.id">
+            <select [(ngModel)]="task.status" class="status-select">
+              <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+            </select>
+          </td>
+
+          <!-- Assigned To -->
+          <td *ngIf="editingTaskId !== task.id">
+            {{ task.assignedTo || '—' }}
+          </td>
+          <td *ngIf="editingTaskId === task.id">
+            <input [(ngModel)]="task.assignedTo" />
+          </td>
+
+          <!-- Actions -->
+          <td class="actions">
+            <button class="btn edit"
+              *ngIf="editingTaskId !== task.id"
+              (click)="startEdit(task.id)">
+              Edit
+            </button>
+
+            <button class="btn update"
+              *ngIf="editingTaskId === task.id"
+              (click)="updateTask(task)">
+              Update
+            </button>
+
+            <button class="btn cancel"
+              *ngIf="editingTaskId === task.id"
+              (click)="cancelEdit()">
+              Cancel
+            </button>
+
+            <button class="btn delete"
+              (click)="deleteTask(task.id)">
+              Delete
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p *ngIf="tasks.length === 0" class="empty">
+    No housekeeping tasks found.
+  </p>
+
+  <!-- Form -->
+  <div class="form-section">
+    <app-tasks-form (saved)="loadTasks()"></app-tasks-form>
+  </div>
+
+</div>

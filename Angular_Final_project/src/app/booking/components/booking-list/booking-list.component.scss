@@ -1,0 +1,131 @@
+/* Container with subtle card style */
+.table-container {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-left: 265px;
+  max-width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Table base */
+.booking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  min-width: 750px;
+  font-size: 16px; /* increased font size */
+  color: #2c3e50; /* dark blue-gray */
+}
+
+/* Header cells */
+.booking-table thead th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 18px 20px;
+  color: #34495e;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Body rows with subtle card look */
+.booking-table tbody tr {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease; /* faster, subtle transition */
+}
+
+/* Hover effect */
+.booking-table tbody tr:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Table cells */
+.booking-table tbody td {
+  padding: 18px 20px;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  user-select: text;
+  color: #34495e;
+}
+
+/* Emphasize first cell */
+.booking-table tbody td:first-child {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Status badges */
+.status {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: capitalize;
+  user-select: none;
+  letter-spacing: 0.03em;
+}
+
+/* Status colors */
+.status.pending {
+  background-color: #fff4e5;
+  color: #d97706;
+}
+
+.status.confirmed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status.cancelled {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status.completed {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+/* Cancel button */
+.btn-cancel {
+  background-color: #e53e3e;
+  border: none;
+  color: white;
+  padding: 9px 20px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(229, 62, 62, 0.4);
+}
+
+.btn-cancel:hover {
+  background-color: #c53030;
+  box-shadow: 0 4px 10px rgba(197, 48, 48, 0.6);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .booking-table {
+    min-width: unset;
+    font-size: 14px;
+  }
+
+  .booking-table thead th,
+  .booking-table tbody td {
+    padding: 14px 12px;
+  }
+}

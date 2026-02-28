@@ -1,0 +1,60 @@
+.booking-container {
+  margin-top: 110px; /* navbar height */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.title span {
+  color: #3f51b5;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.items-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.items-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 14px;
+}

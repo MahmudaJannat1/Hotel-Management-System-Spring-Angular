@@ -1,0 +1,86 @@
+
+<section class="payment-hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <!-- <img src="assets/logo.png" class="hotel-logo">
+    <div class="stars">★ ★ ★ ★ ★</div> -->
+    <div class="sub-title">SECURE CHECKOUT</div>
+    <h1 class="main-title">Payment</h1>
+  </div>
+</section>
+
+<div class="checkout-wrapper">
+
+  <!-- 💳 PAYMENT CARD -->
+  <div class="payment-card">
+
+    <h2>Payment</h2>
+    <p class="subtitle">All transactions are secure & encrypted</p>
+
+    <form [formGroup]="paymentForm" (ngSubmit)="submitPayment()">
+
+      <div class="card-icons">
+        <img src="assets/card.png" height="90" weight="90" alt="Cards">
+         
+      </div>
+
+      <div class="form-group">
+        <label>Amount</label>
+        <input type="number" formControlName="amount" placeholder="Enter amount">
+      </div>
+
+      <div class="form-group">
+        <label>Payment Method</label>
+        <select formControlName="method">
+          <option value="CASH">Cash</option>
+          <option value="BKASH">bKash</option>
+          <option value="NAGAD">Nagad</option>
+          <option value="CREDIT_CARD">Credit Card</option>
+        </select>
+      </div>
+
+      <button
+        class="pay-btn"
+        type="submit"
+        [disabled]="paymentForm.invalid || !bookingId">
+        PAY NOW
+      </button>
+
+    </form>
+  </div>
+
+  <!-- 🧾 INVOICE PREVIEW -->
+  <div class="invoice-panel">
+
+    <h3>Invoice Summary</h3>
+
+    <div class="invoice-row">
+      <span>Booking ID</span>
+      <span>#{{ bookingId }}</span>
+    </div>
+
+    <div class="invoice-row">
+      <span>Room Charges</span>
+      <span>৳ {{ paymentForm.value.amount || 0 }}</span>
+    </div>
+
+    <div class="invoice-row">
+      <span>Tax & Fees</span>
+      <span>৳ 0</span>
+    </div>
+
+    <div class="invoice-divider"></div>
+
+    <div class="invoice-total">
+      <span>Total Payable</span>
+      <span>৳ {{ paymentForm.value.amount || 0 }}</span>
+    </div>
+
+    <p class="secure-note">
+      🔒 This invoice will be generated after successful payment
+    </p>
+
+  </div>
+
+</div>
+

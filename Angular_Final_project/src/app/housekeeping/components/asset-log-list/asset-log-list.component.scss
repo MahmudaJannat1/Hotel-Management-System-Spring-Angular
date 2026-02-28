@@ -1,0 +1,135 @@
+/* Main content beside sidebar */
+.page-wrapper {
+  margin-left: 260px; /* sidebar width */
+  padding: 24px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Title */
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Card wrapper */
+.table-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+/* Table */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.custom-table thead {
+  background: #f1f5f9;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.custom-table th {
+  font-weight: 700;
+  color: #374151;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Clickable asset */
+.link {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Inputs inside table */
+.custom-table input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actions-col {
+  width: 200px;
+}
+
+.btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Button colors */
+.btn.edit {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn.update {
+  background: #10b981;
+  color: white;
+}
+
+.btn.cancel {
+  background: #9ca3af;
+  color: white;
+}
+
+.btn.delete {
+  background: #ef4444;
+  color: white;
+}
+
+/* Empty text */
+.empty {
+  margin-top: 20px;
+  color: #6b7280;
+}
+
+/* Form spacing */
+.form-section {
+  margin-top: 30px;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 900px) {
+  .page-wrapper {
+    margin-left: 0;
+    padding: 16px;
+  }
+}

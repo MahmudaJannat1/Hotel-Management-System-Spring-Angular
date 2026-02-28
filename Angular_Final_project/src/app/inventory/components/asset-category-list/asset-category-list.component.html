@@ -1,0 +1,91 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h2>
+      <i class="fas fa-boxes"></i>
+      Asset Categories
+    </h2>
+
+    <a
+      routerLink="/inventory/asset/new"
+      class="btn-primary"
+    >
+      <i class="fas fa-plus"></i>
+      Add Category
+    </a>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="loading">
+    Loading asset categories...
+  </div>
+
+  <!-- Table Card -->
+  <div *ngIf="!loading" class="table-card">
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Category Name</th>
+          <th>Description</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of categories">
+
+          <td>#{{ c.id }}</td>
+
+          <td class="category-name">
+            {{ c.name }}
+          </td>
+
+          <td class="desc">
+            {{ c.description }}
+          </td>
+
+         <td class="actions text-center">
+
+<a
+  [routerLink]="['/inventory/asset/edit', c.id]"
+  class="icon-btn edit"
+>
+  <i class="fas fa-edit"></i>
+  <span>Edit</span>
+</a>
+
+
+  <button
+    class="icon-btn delete"
+    (click)="deleteCategory(c.id)"
+  >
+    <i class="fas fa-trash"></i>
+    <span>Delete</span>
+  </button>
+
+
+
+</td>
+
+        </tr>
+      </tbody>
+    </table><br>
+<div ><a
+  routerLink="/inventory"
+  class="btn-secondary"
+>
+  <i class="fas fa-arrow-left"></i>
+  Back to Inventory
+</a></div>
+
+
+   
+
+  </div>
+
+</div>

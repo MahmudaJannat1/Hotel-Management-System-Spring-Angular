@@ -1,0 +1,74 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <div class="form-card">
+
+    <h2 class="form-title">
+      <i class="fas fa-calendar-plus"></i>
+      Mark Attendance
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <!-- Employee -->
+      <div class="form-group">
+        <label>Employee</label>
+        <select formControlName="employeeId">
+          <option value="">Select Employee</option>
+          <option *ngFor="let e of employees" [value]="e.id">
+            {{ e.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Date -->
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" formControlName="date" />
+      </div>
+
+      <!-- Time row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-In</label>
+          <input type="time" formControlName="checkIn" />
+        </div>
+
+        <div class="form-group">
+          <label>Check-Out</label>
+          <input type="time" formControlName="checkOut" />
+        </div>
+      </div>
+
+      <!-- Shift -->
+      <div class="form-group">
+        <label>Shift</label>
+        <select formControlName="shift">
+          <option value="">Select Shift</option>
+          <option *ngFor="let s of shifts" [value]="s">
+            {{ s }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-save"></i> Save Attendance
+        </button>
+
+        <button
+          type="button"
+          routerLink="/employee/admin/attendance"
+          class="btn-secondary"
+        >
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

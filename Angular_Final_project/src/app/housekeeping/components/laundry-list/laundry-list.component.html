@@ -1,0 +1,83 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <h2 class="page-title">
+    <i class="fas fa-shirt"></i>
+    Laundry Requests
+  </h2>
+
+  <div class="table-card" *ngIf="laundryRequests.length > 0">
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th class="actions-col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let request of laundryRequests">
+          <td>{{ request.id }}</td>
+
+          <td>{{ request.description }}</td>
+
+          <!-- Status -->
+          <td>
+            <span *ngIf="editId !== request.id" class="status-badge" [ngClass]="request.status.toLowerCase()">
+              {{ request.status }}
+            </span>
+
+            <select
+              *ngIf="editId === request.id"
+              [(ngModel)]="request.status"
+              class="status-select"
+            >
+              <option *ngFor="let s of statuses" [value]="s">{{ s }}</option>
+            </select>
+          </td>
+
+          <!-- Actions -->
+          <td class="actions">
+            <button class="btn edit"
+              *ngIf="editId !== request.id"
+              (click)="startEdit(request.id)">
+              Edit
+            </button>
+
+            <button class="btn update"
+              *ngIf="editId === request.id"
+              (click)="updateStatus(request.id, request.status)">
+              Update
+            </button>
+
+            <button class="btn cancel"
+              *ngIf="editId === request.id"
+              (click)="cancelEdit()">
+              Cancel
+            </button>
+
+            <button class="btn delete"
+              (click)="deleteRequest(request.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p *ngIf="laundryRequests.length === 0" class="empty">
+    No laundry requests found.
+  </p>
+
+  <!-- Form -->
+  <div class="form-section">
+    <app-laundry-form (saved)="loadLaundry()"></app-laundry-form>
+  </div>
+
+</div>

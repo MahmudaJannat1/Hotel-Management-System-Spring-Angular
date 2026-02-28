@@ -1,0 +1,68 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <h2 class="dashboard-title">
+    <i class="fas fa-warehouse"></i>
+    Inventory Dashboard
+  </h2>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="loading-text">
+    Loading inventory stats...
+  </div>
+
+  <!-- Cards Grid -->
+  <div *ngIf="!loading && stats" class="cards-grid">
+
+    <!-- Total Assets -->
+    <div class="stat-card">
+      <div class="card-header">
+        <i class="fas fa-boxes card-icon"></i>
+        <span>Total Assets</span>
+      </div>
+      <div class="card-number">{{ stats.totalAssets }}</div>
+      <a routerLink="/inventory/asset/list" class="card-btn btn-blue">
+        View Assets
+      </a>
+    </div>
+
+    <!-- Available Assets -->
+    <div class="stat-card">
+      <div class="card-header">
+        <i class="fas fa-check-circle card-icon"></i>
+        <span>Available Assets</span>
+      </div>
+      <div class="card-number">{{ stats.availableAssets }}</div>
+      <a routerLink="/inventory/asset/list" class="card-btn btn-green">
+        View Assets
+      </a>
+    </div>
+
+    <!-- Total Stock Items -->
+    <div class="stat-card">
+      <div class="card-header">
+        <i class="fas fa-cubes card-icon"></i>
+        <span>Total Stock Items</span>
+      </div>
+      <div class="card-number">{{ stats.totalStockItems }}</div>
+      <a routerLink="/inventory/stock/list" class="card-btn btn-purple">
+        View Stock
+      </a>
+    </div>
+
+    <!-- Low Stock Items -->
+    <div class="stat-card">
+      <div class="card-header">
+        <i class="fas fa-exclamation-triangle card-icon"></i>
+        <span>Low Stock Items</span>
+      </div>
+      <div class="card-number">{{ stats.lowStockItems }}</div>
+      <a routerLink="/inventory/stock/list" class="card-btn btn-red">
+        Check Stock
+      </a>
+    </div>
+
+  </div>
+
+</div>

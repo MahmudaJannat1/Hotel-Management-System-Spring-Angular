@@ -1,0 +1,20 @@
+<!-- booking-stats.component.html -->
+<!-- <div *ngIf="stats">
+  <h3>Booking Stats</h3>
+  <ul>
+    <li>Total: {{ stats.totalBookings }}</li>
+    <li>Pending: {{ stats.pendingBookings }}</li>
+    <li>Confirmed: {{ stats.confirmedBookings }}</li>
+    <li>Cancelled: {{ stats.cancelledBookings }}</li>
+    <li>Completed: {{ stats.completedBookings }}</li>
+  </ul>
+</div> -->
+
+
+<div style="display: block;">
+  <canvas baseChart
+          [data]="chartData"
+          [type]="chartType">
+  </canvas>
+</div>
+

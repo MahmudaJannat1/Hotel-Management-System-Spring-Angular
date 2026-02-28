@@ -1,0 +1,123 @@
+/* HERO */
+.rooms-hero {
+  height: 360px;
+  background: url('/assets/deluxeroom.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.rooms-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/* ROOM BLOCK */
+.room-wrapper {
+  width: 90%;
+  margin: 80px auto;
+  display: flex;
+  position: relative;
+}
+
+/* IMAGE */
+.room-img {
+  width: 60%;
+}
+
+.room-img img {
+  width: 85%;
+  margin-left: 80px;
+  border-radius: 2px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.room-wrapper:hover .room-img img {
+  transform: scale(1.03);
+}
+
+/* CONTENT CARD */
+.room-content {
+  width: 45%;
+  background: #fff;
+  padding: 30px 40px;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+}
+
+.room-content h2 {
+  font-size: 16px;
+  font-family: 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+.room-content .type {
+  display: block;
+  font-size: 28px;
+  font-weight:bold;
+  color: #9c7c3c;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.desc {
+  font-size: 15px;
+  color: #555;
+  margin: 18px 0;
+}
+
+.price {
+  font-size: 20px;
+  color: #6d562f;
+  font-weight: 500;
+}
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 25px 0;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details {
+  background: none;
+  border: none;
+  color: #6d562f;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.book-btn {
+  background: #6d562f;
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #774704;
+}

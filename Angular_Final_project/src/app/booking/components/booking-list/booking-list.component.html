@@ -1,0 +1,36 @@
+<app-sidebar></app-sidebar>
+
+<div class="table-container">
+  <table class="booking-table">
+    <thead>
+      <tr>
+        <th>Booking Code</th>
+        <th>Customer</th>
+        <th>Room</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Status</th>
+        <th *ngIf="isAdminView">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td>{{ booking.bookingCode }}</td>
+        <td>{{ booking.customerName }}</td>
+        <td>{{ booking.roomNumber }}</td>
+        <td>{{ booking.checkInDate | date:'short' }}</td>
+        <td>{{ booking.checkOutDate | date:'short' }}</td>
+        <td>
+          <span class="status" [ngClass]="booking.status.toLowerCase()">
+            {{ booking.status }}
+          </span>
+        </td>
+        <td *ngIf="isAdminView">
+          <button class="btn-cancel" (click)="cancelBooking(booking.bookingCode)">
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

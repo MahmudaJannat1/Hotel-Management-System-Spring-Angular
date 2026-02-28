@@ -1,0 +1,50 @@
+
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <div class="page-header">
+    <h2 class="page-title">
+      <i class="fas fa-users"></i> Employees
+    </h2>
+
+    <button routerLink="/employee/admin/create" class="btn-primary">
+      <i class="fas fa-plus"></i> Add Employee
+    </button>
+  </div>
+
+  <div class="table-card" *ngIf="employees.length > 0">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Department</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of employees">
+          <td>{{ e.name }}</td>
+          <td>{{ e.role }}</td>
+          <td>{{ e.department }}</td>
+          <td>{{ e.phone }}</td>
+          <td>
+            <button class="btn-edit" (click)="edit(e.id)">
+              <i class="fas fa-edit"></i> Edit
+            </button>
+            <button class="btn-delete" (click)="delete(e.id!)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="employees.length === 0" class="empty">
+    No employees found.
+  </p>
+
+</div>

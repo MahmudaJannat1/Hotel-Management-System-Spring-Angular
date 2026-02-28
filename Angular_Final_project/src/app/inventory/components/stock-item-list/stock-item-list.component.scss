@@ -1,0 +1,140 @@
+/* Layout */
+.content-wrapper {
+  margin-left: 260px;
+  padding: 28px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1f2937;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(34,197,94,0.4);
+}
+
+/* Loading */
+.loading {
+  padding: 20px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.admin-table th {
+  background: #f3f4f6;
+  padding: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6b7280;
+  text-align: left;
+}
+
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-table tr:hover {
+  background: #f9fafb;
+}
+
+/* Actions buttons */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+/* Edit */
+.icon-btn.edit {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+/* Delete */
+.icon-btn.delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Hover Effect */
+.icon-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Empty Text */
+.empty-text {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

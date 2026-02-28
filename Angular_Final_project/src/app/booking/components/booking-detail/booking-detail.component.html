@@ -1,0 +1,37 @@
+<h2>Booking</h2>
+
+<div class="booking-container" *ngIf="booking">
+
+  <div class="booking-card">
+    <h2 class="title">
+      Booking <span>#{{ booking.bookingCode }}</span>
+    </h2>
+
+    <div class="info-grid">
+      <p><strong>Customer:</strong> {{ booking.customerName }}</p>
+      <p><strong>Room:</strong> {{ booking.roomNumber }}</p>
+      <p><strong>Room Type:</strong> {{ booking.roomType }}</p> <!-- new -->
+      <p><strong>Adults:</strong> {{ booking.adults }}</p>       <!-- new -->
+      <p><strong>Children:</strong> {{ booking.children }}</p>   <!-- new -->
+      <p><strong>Number of Nights:</strong> {{ booking.numberOfNights }}</p> <!-- new -->
+      <p><strong>Check-In:</strong> {{ booking.checkInDate | date:'mediumDate' }}</p>
+      <p><strong>Check-Out:</strong> {{ booking.checkOutDate | date:'mediumDate' }}</p>
+      <p>
+        <strong>Status:</strong>
+        <span class="status">{{ booking.status }}</span>
+      </p>
+    </div>
+
+    <h3 class="items-title">Booking Items</h3>
+
+    <ul class="items-list">
+      <li *ngFor="let item of booking.items">
+        <span>{{ item.itemName }}</span>
+        <span>Qty: {{ item.quantity }}</span>
+        <span>৳ {{ item.price }}</span>
+      </li>
+    </ul>
+
+  </div>
+
+</div>

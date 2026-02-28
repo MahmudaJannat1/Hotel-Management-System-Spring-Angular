@@ -1,0 +1,157 @@
+.cont{
+
+padding: 24px;
+  margin-left: 250px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+/* Page title */
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+/* Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card base */
+.card {
+  position: relative;
+  padding: 22px;
+  margin-left: 10px;
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.65)
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-6px) scale(1.0);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* Decorative glow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.35), transparent 60%);
+  pointer-events: none;
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-header i {
+  font-size: 26px;
+}
+
+/* Title */
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Number */
+.count {
+  margin: 18px 0;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+/* Button */
+.card button {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.card button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Variants */
+.primary {
+  border-left: 6px solid #3b83f6ad;
+}
+.primary i,
+.primary .count {
+  color: #3b83f6a4;
+}
+.primary button {
+  background: #3b82f6;
+  color: white;
+}
+
+.warning {
+  border-left: 6px solid #f59f0bb4;
+}
+.warning i,
+.warning .count {
+  color: #f59f0bb8;
+}
+.warning button {
+  background: #f59f0bb4;
+  color: white;
+}
+
+.danger {
+  border-left: 6px solid #cf4444d5;
+}
+.danger i,
+.danger .count {
+  color: #ef4444;
+}
+.danger button {
+  background: #ef4444bd;
+  color: white;
+}
+
+.success {
+  border-left: 6px solid #10b981;
+}
+.success i,
+.success .count {
+  color: #10b981;
+}
+.success button {
+  background: #10b981;
+  color: white;
+}
+
+/* Loading */
+.loading {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,117 @@
+/* HERO BACKGROUND */
+.booking-hero {
+  height: 40vh;
+  background: url('/assets/hotel3.jpg') center / cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(32, 32, 32, 0.45);
+}
+
+/* FORM POSITION */
+.page-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 50px;
+}
+
+/* FORM CARD */
+.form-card {
+  width: 900px;
+  margin: auto;
+  background: #f5f2ec;
+  padding: 35px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.title {
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+/* INPUTS */
+.form-group label {
+  font-size: 12px;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+/* CALENDAR LOOK */
+.form-group.calendar input {
+  cursor: pointer;
+  background: #fff url('/assets/calendar-icon.svg') no-repeat right 10px center;
+}
+
+/* ITEMS */
+.sub-title {
+  margin: 35px 0 15px;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.item-row input,
+.item-row select {
+  padding: 8px;
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background: #0b2e2e;
+  color: #fff;
+  padding: 10px 28px;
+  border: none;
+}
+
+.btn-secondary {
+  background: #ddd;
+  padding: 10px 20px;
+  border: none;
+}
+
+.btn-remove {
+  background: #a00000;
+  color: #fff;
+  border: none;
+}
+
+/* EMPTY */
+.empty-text {
+  color: #777;
+  font-style: italic;
+}

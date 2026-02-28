@@ -1,0 +1,133 @@
+<!-- <div class="invoice-container" *ngIf="invoice; else loading">
+  <h2>Invoice #{{ invoice.invoiceNumber }}</h2>
+  <p>Date: {{ invoice.invoiceDate | date:'medium' }}</p>
+  <p>Booking ID: {{ invoice.bookingId }}</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of invoice.items">
+        <td>{{ item.description }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.amount | number:'1.0-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Total: {{ invoice.totalAmount | number:'1.0-2' }}</p>
+
+  <button class="btn primary" (click)="printInvoice()">Print Invoice</button>
+</div>
+
+<ng-template #loading>
+  <p>Loading invoice...</p>
+</ng-template> -->
+
+
+<div class="invoice-container" *ngIf="invoice; else loading">
+  <div class="invoice-header">
+    <div class="company-info">
+      <h1><i class="fas fa-building"></i> Your Company</h1>
+      <p class="company-address">123 Business Street, Dhaka, Bangladesh</p>
+      <p class="company-contact">contact@company.com | +880 123456789</p>
+    </div>
+    
+    <div class="invoice-title-section">
+      <h2>TAX INVOICE</h2>
+      <div class="invoice-meta">
+        <div class="invoice-number">
+          <span class="label">Invoice #:</span>
+          <span class="value">{{ invoice.invoiceNumber }}</span>
+        </div>
+        <div class="invoice-date">
+          <span class="label">Invoice Date:</span>
+          <span class="value">{{ invoice.invoiceDate | date:'medium' }}</span>
+        </div>
+        <div class="booking-id">
+          <span class="label">Booking ID:</span>
+          <span class="value">{{ invoice.bookingId }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="invoice-body">
+    <div class="table-container">
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th class="text-left">Description</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-right">Amount (BDT)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of invoice.items">
+            <td class="text-left description">{{ item.description }}</td>
+            <td class="text-center quantity">{{ item.quantity }}</td>
+            <td class="text-right amount">{{ item.amount | number:'1.2-2' }}</td>
+          </tr>
+          
+          <!-- Empty rows for spacing -->
+          <tr *ngFor="let i of []" class="empty-row">
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="total-section">
+      <div class="total-row">
+        <span class="total-label">Total Amount:</span>
+        <span class="total-value">{{ invoice.totalAmount | number:'1.2-2' }} BDT</span>
+      </div>
+      <!-- <div class="tax-row">
+        <span class="tax-label">VAT (15%):</span>
+        <span class="tax-value">{{ invoice.totalAmount * 0.15 | number:'1.2-2' }} BDT</span>
+      </div>
+      <div class="grand-total-row">
+        <span class="grand-total-label">Grand Total:</span>
+        <span class="grand-total-value">{{ invoice.totalAmount * 1.15 | number:'1.2-2' }} BDT</span>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="invoice-footer">
+    <div class="payment-info">
+      <h3><i class="fas fa-credit-card"></i> Payment Information</h3>
+      <p>Payment Status: <span class="status-paid">Paid</span></p>
+      <p>Payment Method: Online Payment</p>
+    </div>
+    
+    <div class="notes-section">
+      <h3><i class="fas fa-sticky-note"></i> Notes</h3>
+      <p>Thank you for your business. Please keep this invoice for your records.</p>
+      <p>For any queries, contact our support team.</p>
+    </div>
+  </div>
+
+  <div class="invoice-actions">
+    <button class="btn-print" (click)="printInvoice()">
+      <i class="fas fa-print"></i> Print Invoice
+    </button>
+    <button class="btn-download">
+      <i class="fas fa-download"></i> Download PDF
+    </button>
+    <!-- <button class="btn-email">
+      <i class="fas fa-envelope"></i> Email Invoice
+    </button> -->
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <p>Loading invoice...</p>
+  </div>
+</ng-template>

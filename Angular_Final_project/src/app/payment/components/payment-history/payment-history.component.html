@@ -1,0 +1,63 @@
+<app-sidebar></app-sidebar>
+
+<div class="payment-history">
+  <div class="header-section">
+    <h2><i class="fas fa-receipt"></i> <h3>My Payment History</h3></h2>
+    <p class="subtitle">View and track all your payment transactions</p>
+  </div>
+
+  <!-- Loading State - Same logic -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Loading payments...</p>
+  </div>
+
+  <!-- Empty State - Same logic -->
+  <div *ngIf="!loading && payments.length === 0" class="empty-state">
+    <div class="empty-icon">
+      <i class="fas fa-credit-card"></i>
+    </div>
+    <h3>No payments found</h3>
+    <p>Your payment history will appear here once you make transactions.</p>
+  </div>
+
+  <!-- Table - Same logic -->
+  <div *ngIf="!loading && payments.length > 0" class="table-container">
+    <div class="table-wrapper">
+      <table class="payment-table">
+        <thead>
+          <tr>
+            <th class="serial">#</th>
+            <th>Booking ID</th>
+            <th>Amount</th>
+            <th>Method</th>
+            <th>Date</th>
+            <th>Invoice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of payments; index as i">
+            <td class="serial">{{ i + 1 }}</td>
+            <td class="booking-id">
+              <i class="fas fa-hashtag"></i>
+              {{ p.bookingId }}
+            </td>
+            <td class="amount">{{ p.amountNumber | currency:'BDT' }}</td>
+            <td>
+              <span class="method-badge" [class]="'method-' + p.method.toLowerCase()">
+                {{ p.method }}
+              </span>
+            </td>
+            <td class="date">{{ p.paymentDate | date:'medium' }}</td>
+            <td>
+              <a [routerLink]="['/payment/invoice', p.invoiceId]" class="invoice-link">
+                <i class="fas fa-file-invoice"></i>
+                View Invoice
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

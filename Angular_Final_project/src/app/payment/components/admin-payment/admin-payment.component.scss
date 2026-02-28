@@ -1,0 +1,98 @@
+.payments-table {
+  width: 100%;
+  margin-left: 270px;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+.h2{
+  margin-top: 30px;
+  font-size: 28px;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+}
+.payments-table thead {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.payments-table th,
+.payments-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.payments-table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  background: none;
+  background-color: #004e82a4;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-link:hover {
+  background-color: #494949;
+}
+
+.btn-cancel {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #c0392b;
+}
+
+.stats-button-container {
+  text-align: right;
+}
+
+.btn-primary {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1f618d;
+}
+
+.loading {
+  font-size: 18px;
+  color: #555;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 600;
+}

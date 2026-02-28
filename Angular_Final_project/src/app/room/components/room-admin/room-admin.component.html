@@ -1,0 +1,15 @@
+<h2>Room Dashboard</h2>
+
+<div *ngIf="loading">Loading...</div>
+
+<div class="stats" *ngIf="!loading">
+  <div>Total Rooms: {{ stats.totalRooms }}</div>
+  <div>Available: {{ stats.availableRooms }}</div>
+  <div>Occupied: {{ stats.occupiedRooms }}</div>
+  <div>Booked: {{ stats.bookedRooms }}</div>
+  <div>Maintenance: {{ stats.maintenanceRooms }}</div>
+</div>
+
+<hr />
+
+<a routerLink="/admin/rooms/list">Manage Rooms</a>

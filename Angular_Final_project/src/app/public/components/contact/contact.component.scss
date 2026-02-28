@@ -1,0 +1,121 @@
+/* --- HERO IMAGE (STICKY) --- */
+.contact-hero {
+    width: 100%;
+    height: 300px;
+    //   background-image: url('your-image.jpg');
+    background: url('/assets/foot2.jpg') center center / cover no-repeat;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* IMAGE STAYS STILL */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-hero .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.contact-hero h2 {
+    position: relative;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 600;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- CONTACT CONTENT --- */
+.contact-section {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-left h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.contact-left p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: #333;
+}
+
+.info-box h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #8b6f45;
+}
+
+.info-box p {
+    margin: 4px 0 20px;
+}
+
+/* RIGHT SIDE */
+.contact-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    outline: none;
+    font-size: 14px;
+}
+
+.contact-right textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* SEND BUTTON */
+.send-btn {
+    width: 160px;
+    padding: 10px;
+    background: #b89363;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #d9b98a;
+    transform: translateY(-3px);
+}
+
+/* MAP SECTION */
+.map-section iframe {
+    width: 100%;
+    border: none;
+}

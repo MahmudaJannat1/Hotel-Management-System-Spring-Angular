@@ -1,0 +1,80 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h2><i class="fas fa-clipboard-list"></i> Employee Tasks</h2>
+
+    <button
+      class="btn-primary"
+      routerLink="/employee/admin/tasks/create"
+    >
+      <i class="fas fa-plus"></i> Assign Task
+    </button>
+  </div>
+
+  <!-- Table Card -->
+  <div class="table-card">
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Task Type</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Assigned</th>
+          <th>Completed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of tasks">
+
+          <td>#{{ t.employeeId }}</td>
+
+          <td>
+            <span class="task-type">{{ t.taskType }}</span>
+          </td>
+
+          <td class="desc">{{ t.description }}</td>
+
+          <td>
+            <span class="status-badge" [ngClass]="t.status.toLowerCase()">
+              {{ t.status }}
+            </span>
+          </td>
+
+          <td>{{ t.assignedDate || '-' }}</td>
+          <td>{{ t.completedDate || '-' }}</td>
+
+          <td class="actions">
+
+            <!-- Status Buttons -->
+            <button
+              *ngFor="let s of statuses"
+              class="status-btn"
+              [disabled]="t.status === s"
+              (click)="updateStatus(t, s)"
+            >
+              {{ s }}
+            </button>
+
+            <button class="edit-btn" (click)="edit(t.id!)">
+              <i class="fas fa-edit"></i>
+            </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="tasks.length === 0" class="empty-text">
+      No tasks found.
+    </p>
+
+  </div>
+
+</div>

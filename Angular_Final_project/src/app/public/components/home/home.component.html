@@ -1,0 +1,446 @@
+
+
+<!-- 🔹 Top Info Navbar -->
+<div class="topbar" [class.hidden]="isScrolled">
+  <div class="container">
+    <div class="left-info">
+      <span><i class="fas fa-phone"></i> +880 1711-234567</span>
+      <span><i class="fas fa-envelope"></i> info@rolaxresort.com</span>
+    </div>
+    <div class="right-social">
+      <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+  </div>
+</div>
+
+<app-navbar></app-navbar>
+
+<!-- 🔹 Main Navbar -->
+<!-- <header class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+    <div class="logo">Rolax Resort</div>
+    <nav>
+      <a routerLink="/">Home</a>
+    <a routerLink="/rooms">Rooms</a>
+    <a routerLink="/contact">Contact</a> -->
+      <!-- <button class="book-btn">Book Now</button> -->
+       <!-- <button routerLink="/customer/book" class="book-btn">
+  Book Now
+</button> -->
+
+<!-- <ng-container *ngIf="isLoggedIn">
+  <a *ngIf="role === 'ROLE_ADMIN'" routerLink="/dashboard/admin">Admin Dashboard</a>
+  <a *ngIf="role === 'ROLE_USER'" routerLink="/dashboard/user">User Dashboard</a>
+  <a *ngIf="role === 'ROLE_MODERATOR'" routerLink="/dashboard/moderator">Moderator Dashboard</a>
+
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</ng-container>
+
+
+  </nav>
+  </div>
+</header> -->
+
+<!-- 🔹 Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <h1> Rest Journey in <span>Single step</span>,<br />in the breathtaking</h1>
+
+
+    <form class="booking-form">
+      <div class="field">
+        <label>Check In Date</label>
+        <input type="date" />
+      </div>
+
+      <div class="field">
+        <label>Check Out Date</label>
+        <input type="date" />
+      </div>
+
+      <div class="field">
+        <label>Adult</label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Children</label>
+        <select>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
+
+      <button routerLink="rooms" class="search-btn">Search</button>
+          
+
+    </form>
+  </div>
+</section>
+
+<section class="welcome-section text-center py-10">
+  <div class="container">
+    <h2 class="section-title">Welcome Message</h2>
+    <p class="welcome-text">
+      Welcome to <strong>Rolax Resort</strong>, your sanctuary of luxury and relaxation.
+      Nestled in the heart of nature, we offer you a peaceful escape blended with world-class
+      comfort. Whether you’re here for a romantic getaway, family vacation, or business retreat —
+      every moment at Rolax Resort is designed to make you feel at home.
+    </p>
+    <a href="/about" class="btn btn-outline">Read More</a>
+  </div>
+</section>
+
+<!-- 🌿 Rooms & Suites Section -->
+<section class="rooms-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Rooms & Suites</h2>
+
+
+    <div class="row g-4">
+      <!-- Deluxe Room -->
+      <div class="col-md-4">
+        <div class="room-card">
+          <img src="assets/room4.jpg" />
+          <div class="book-btn">BOOK</div>
+          <div class="room-info">
+            <!-- Room title below -->
+            <h5 class="room-title mt-2">Deluxe Room</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Left: DETAILS button -->
+              <a routerLink="/rooms" class="details-btn">DETAILS →</a>
+
+              <!-- Right: icons -->
+              <div class="room-icons">
+                <i class="bi bi-bed"></i>
+                <i class="bi bi-cup-hot"></i>
+                <i class="bi bi-wifi"></i>
+                <i class="bi bi-tv"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Deluxe Suite Room -->
+      <div class="col-md-4">
+        <div class="room-card">
+          <img src="assets/deluxesuiteroom .jpg" />
+          <div class="book-btn">BOOK</div>
+          <div class="room-info">
+            <!-- Room title below -->
+            <h5 class="room-title mt-2">Deluxe Suite Room</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Left: DETAILS button -->
+              <a routerLink="/rooms" class="details-btn">DETAILS →</a>
+
+              <!-- Right: icons -->
+              <div class="room-icons">
+                <i class="bi bi-bed"></i>
+                <i class="bi bi-cup-hot"></i>
+                <i class="bi bi-wifi"></i>
+                <i class="bi bi-tv"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Deluxe Suite Room -->
+      <div class="col-md-4">
+        <div class="room-card">
+          <img src="assets/room3.jpg" />
+          <div class="book-btn">BOOK</div>
+          <div class="room-info">
+            <!-- Room title below -->
+            <h5 class="room-title mt-2">Executive Room</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Left: DETAILS button -->
+              <a routerLink="/rooms" class="details-btn">DETAILS →</a>
+
+              <!-- Right: icons -->
+              <div class="room-icons">
+                <i class="bi bi-bed"></i>
+                <i class="bi bi-cup-hot"></i>
+                <i class="bi bi-wifi"></i>
+                <i class="bi bi-tv"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="luxury-section">
+  <div class="content-area">
+    <div class="text-block">
+      <div class="stars">★★★★★</div>
+
+      <h5 class="sub-title">THE RADIANT HOTEL</h5>
+
+      <h2 class="main-title">Enjoy a Luxury Experience</h2>
+
+      <p class="desc">
+        Welcome to the best four-star deluxe hotel in Gorakhpur. Among the facilities at this
+        property are room service and a concierge service, along with free WiFi throughout the
+        property.
+      </p>
+
+      <p class="desc">
+        The hotel offers an indoor pool, fitness centre, evening entertainment and a 24-hour
+        front desk. The units in the hotel are fitted with a kettle. All rooms include a private
+        bathroom with a shower, slippers and a hairdryer.
+      </p>
+
+      <div class="reservation">
+        <i class="ri-phone-line"></i>
+        <div>
+          <span>Reservation</span>
+          <h5>760 760 3377</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-block">
+      <div><img src="assets/room5.jpg" class="img-1" /></div>
+      <div><img src="assets/room6.jpg" class="img-2" /></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="experience-section">
+
+  <!-- BLOCK 1 -->
+  <div class="exp-block">
+    <div class="exp-content">
+      <h4>Discover</h4>
+      <h2>The "7" Scentric</h2>
+      <p>
+        At Scentric, we don't just serve food; we craft experiences. Indulge your senses in a world where every
+        dish is a masterpiece and every moment is a celebration of taste, elegance, and opulence.
+      </p>
+      <a href="#" class="learn-btn">Learn More →</a>
+    </div>
+
+    <div class="exp-image">
+      <img src="assets/res.jpg" alt="Discover Scentric">
+    </div>
+  </div>
+
+  <!-- BLOCK 2 -->
+  <div class="exp-block reverse">
+    <div class="exp-content">
+      <h4>Experiences</h4>
+      <h2>The Pool</h2>
+      <p>
+        Dive into a world of pure indulgence and relaxation at our Pool. The water glistens like liquid sapphire,
+        offering a luxurious escape from the ordinary.
+      </p>
+      <a href="#" class="learn-btn">Learn More →</a>
+    </div>
+
+    <div class="exp-image">
+      <img src="assets/pool.jpg" alt="Pool Experience">
+    </div>
+  </div>
+
+  <!-- BLOCK 3 -->
+  <div class="exp-block">
+    <div class="exp-content">
+      <h4>Modern</h4>
+      <h2>Fitness Center</h2>
+      <p>
+        Our Fitness Center is not just a gym; it's a haven of wellness and transformation. Every moment takes you
+        closer to a healthier, more opulent you.
+      </p>
+      <a href="#" class="learn-btn">Learn More →</a>
+    </div>
+
+    <div class="exp-image">
+      <img src="assets/fit.jpg" alt="Luxury Fitness Center">
+    </div>
+  </div>
+
+  <!-- BLOCK 4 -->
+  <div class="exp-block reverse">
+    <div class="exp-content">
+      <h4>Exclusive</h4>
+      <h2>Spa & Wellness</h2>
+      <p>
+        Unwind in our world-class spa where luxury meets serenity. A complete sanctuary designed for deep rest,
+        rejuvenation, and inner harmony.
+      </p>
+      <a href="#" class="learn-btn">Learn More →</a>
+    </div>
+
+    <div class="exp-image">
+      <img src="assets/spa.jpg" alt="Spa & Wellness">
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="testimonial-section">
+  <div class="overlay"></div>
+
+  <div class="testimonial-content">
+    <h5 class="sub-title">TESTIMONIALS</h5>
+    <h2 class="main-title">What Guest’s Say?</h2>
+
+    <div class="testimonial-box">
+      <p class="review-text">
+        Good service from the resort. Excellent rooms, well maintained. Excellent menu and food
+        preparation. Breakfast choices were good too. The staff was weirdly cold-shouldered towards
+        the female guests however. Not sure why. The stay was excellent otherwise.
+      </p>
+
+      <h4 class="guest-name">ANAGH DESAI</h4>
+      <p class="guest-role">Guest reviewer</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="facilities-section">
+  <div class="container">
+    <h5 class="sub-title">OUR SERVICES</h5>
+    <h2 class="main-title">Hotel Facilities</h2>
+
+    <div class="grid">
+      <!-- Facility Item -->
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-shuttle-van"></i></div>
+        <h4>Pick Up & Drop</h4>
+        <p>Enjoy a seamless and luxurious arrival experience with our personalized pickup and drop services. Our
+          chauffeurs will greet you warmly...</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-car"></i></div>
+        <h4>Parking Space</h4>
+        <p>Indulge in the convenience of our secure and spacious parking facilities, designed to provide a safe and
+          hassle-free experience...</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-bell-concierge"></i></div>
+        <h4>Room Service</h4>
+        <p>Savor the finest cuisine in the comfort of your room with our exquisite room service menu. From gourmet meals
+          to refreshing beverages...</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-swimmer"></i></div>
+        <h4>Swimming Pool</h4>
+        <p>Unwind and rejuvenate by our stunning swimming pool, set amidst a tranquil oasis. Enjoy a refreshing swim or
+          simply lounge by the side...</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-wifi"></i></div>
+        <h4>Fibre Internet</h4>
+        <p>Stay connected and productive with our complimentary high-speed Wi-Fi, available throughout the hotel...</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="icon"><i class="fas fa-utensils"></i></div>
+        <h4>Breakfast</h4>
+        <p>Start your day with a delicious continental breakfast prepared by our culinary team. Choose from fresh
+          pastries, breads...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="booking-hero">
+  <div class="overlay"></div>
+
+  <div class="booking-content">
+    <div class="hero-left">
+      <div class="stars">★★★★★</div>
+
+      <p class="description">
+        Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.
+        Enjoy a cozy and comfortable stay with modern amenities and exceptional service.
+
+      </p>
+
+      <div class="reservation-box">
+        <div class="icon1">📞 <span class="s1">Reservation</span></div>
+        <div class="res-text">
+          <strong class="st1">760 760 3377</strong>
+        </div>
+      </div>
+
+      <a class="book" href="#">Call us & Book Now</a>
+    </div>
+
+    <div class="hero-form">
+      <h3>Hotel Booking Form</h3>
+
+      <div class="form-group">
+        <label class="form-group">Check in</label>
+        <input type="date">
+      </div>
+
+      <div class="form-group">
+        <label class="form-group">Check out</label>
+        <input type="date">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-group">Adults</label>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-group">Children</label>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-check">CHECK AVAILABILITY</button>
+    </div>
+
+  </div>
+</section>
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

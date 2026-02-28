@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<div class="room-details-page">
+  <div *ngIf="loading" class="loading">Loading room details...</div>
+
+  <div *ngIf="!loading && room" class="room-detail-card">
+    <h2>{{ room.roomNumber }} - {{ room.roomType.name }}</h2>
+    <p>Status: <strong>{{ room.status }}</strong></p>
+    <p>Floor: {{ room.floor }}</p>
+    <p>{{ room.sizeSqm }} sqm • Max Guests: {{ room.maxGuests }}</p>
+    <p>Price per night: {{ room.pricePerNight | currency : 'BDT' }}</p>
+    <p class="short-description">{{ room.shortDescription }}</p>
+
+    <div *ngIf="room.imageUrls?.length" class="room-images">
+      <img *ngFor="let img of room.imageUrls" [src]="img || 'assets/deluxeroom.jpg'" alt="Room Image" />
+    </div>
+
+    <div *ngIf="room.amenitiesNames?.length" class="amenities">
+      <h4>Amenities:</h4>
+      <ul>
+        <li *ngFor="let amenity of room.amenitiesNames">{{ amenity }}</li>
+      </ul>
+    </div>
+
+    <button (click)="bookNow()">Book Now</button>
+  </div>  
+</div>

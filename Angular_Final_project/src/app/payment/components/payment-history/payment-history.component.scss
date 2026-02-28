@@ -1,0 +1,269 @@
+.payment-history {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 144px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.header-section {
+  margin-bottom: 32px;
+  margin-left: 260px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header-section h2 {
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-section h2 i {
+  color: #ffeb93;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0e0e0;
+  border-top: 3px solid #eec6436b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.empty-icon {
+  font-size: 48px;
+  color: #bdc3c7;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  color: #2c3e50;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: #7f8c8d;
+  font-size: 14px;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Table Container */
+.table-container {
+  margin-top: 20px;
+  margin-left: 260px;
+  overflow-x: auto;
+}
+
+.table-wrapper {
+  min-width: 800px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.payment-table thead {
+  background: linear-gradient(135deg, hsl(208, 100%, 81%) 0%, #a8e5ffc7 100%);
+}
+
+.payment-table th {
+  padding: 16px 20px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  font-weight: bold;
+}
+
+.payment-table tbody tr {
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.2s ease;
+}
+
+.payment-table tbody tr:hover {
+  background-color: #f8f9ff;
+}
+
+.payment-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.payment-table td {
+  padding: 18px 20px;
+  color: #2c3e50;
+  font-size: 14px;
+  border: none;
+}
+
+.payment-table td.serial {
+  font-weight: 600;
+  color: #666;
+  width: 60px;
+}
+
+.booking-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.booking-id i {
+  color: #9eee43a1;
+  font-size: 12px;
+}
+
+.amount {
+  font-weight: 600;
+  color: #27ae60;
+  font-size: 15px;
+}
+
+.method-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.method-card {
+  background: #e8f4fd;
+  color: #2980b9;
+}
+
+.method-bkash, .method-nagad {
+  background: #e8f6f3;
+  color: #1e8449;
+}
+
+.method-cash {
+  background: #fef9e7;
+  color: #b7950b;
+}
+
+.method-bank {
+  background: #f4ecf7;
+  color: #8e44ad;
+}
+
+.date {
+  color: #666;
+  font-size: 13px;
+  min-width: 180px;
+}
+
+.invoice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #ff99002f;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.invoice-link:hover {
+  background: #dae1ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+}
+
+.invoice-link i {
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-history {
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  .header-section h2 {
+    font-size: 20px;
+
+  
+  }
+  
+  .payment-table th,
+  .payment-table td {
+    padding: 12px 16px;
+  }
+  
+  .invoice-link {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .empty-state,
+  .loading-container {
+    padding: 40px 16px;
+  }
+}
+
+

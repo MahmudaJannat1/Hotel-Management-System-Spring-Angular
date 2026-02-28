@@ -1,0 +1,61 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <h3 class="form-title">
+    <i class="fas fa-broom"></i>
+    {{ task.id ? 'Edit Task' : 'New Task' }}
+  </h3>
+
+  <form class="task-form" (ngSubmit)="saveTask()">
+
+    <div class="form-group">
+      <label>Room ID</label>
+      <input
+        type="number"
+        [(ngModel)]="task.roomId"
+        name="roomId"
+        placeholder="Enter room number"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input
+        type="text"
+        [(ngModel)]="task.description"
+        name="description"
+        placeholder="Enter task description"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Status</label>
+      <select [(ngModel)]="task.status" name="status">
+        <option value="PENDING">PENDING</option>
+        <option value="IN_PROGRESS">IN PROGRESS</option>
+        <option value="COMPLETED">COMPLETED</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Assigned To</label>
+      <input
+        type="text"
+        [(ngModel)]="task.assignedTo"
+        name="assignedTo"
+        placeholder="Staff name (optional)"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">
+        <i class="fas fa-save"></i> Save Task
+      </button>
+    </div>
+
+  </form>
+
+</div>

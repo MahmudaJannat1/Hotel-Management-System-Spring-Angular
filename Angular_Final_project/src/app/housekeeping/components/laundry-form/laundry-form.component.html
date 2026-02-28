@@ -1,0 +1,40 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <h3 class="form-title">
+    <i class="fas fa-shirt"></i>
+    {{ request.id ? 'Edit Laundry' : 'New Laundry Request' }}
+  </h3>
+
+  <form class="laundry-form" (ngSubmit)="saveLaundry()">
+
+    <div class="form-group">
+      <label>Description</label>
+      <input
+        type="text"
+        [(ngModel)]="request.description"
+        name="description"
+        placeholder="Enter laundry description"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Status</label>
+      <select [(ngModel)]="request.status" name="status">
+        <option value="PENDING">PENDING</option>
+        <option value="IN_PROGRESS">IN PROGRESS</option>
+        <option value="DONE">DONE</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">
+        <i class="fas fa-save"></i> Save
+      </button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,76 @@
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+
+  <div class="form-card">
+
+    <h2 class="form-title">
+      <i class="fas fa-tasks"></i>
+      {{ taskId ? 'Edit Task' : 'Assign Task' }}
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <!-- Employee -->
+      <div class="form-group">
+        <label>Employee</label>
+        <select formControlName="employeeId">
+          <option value="">Select Employee</option>
+          <option *ngFor="let e of employees" [value]="e.id">
+            {{ e.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Task Type -->
+      <div class="form-group">
+        <label>Task Type</label>
+        <select formControlName="taskType">
+          <option value="">Select Task Type</option>
+          <option *ngFor="let t of taskTypes" [value]="t">
+            {{ t }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label>Description</label>
+        <textarea
+          formControlName="description"
+          rows="3"
+          placeholder="Describe the task..."
+        ></textarea>
+      </div>
+
+      <!-- Status -->
+      <div class="form-group">
+        <label>Status</label>
+        <select formControlName="status">
+          <option *ngFor="let s of statuses" [value]="s">
+            {{ s }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-save"></i>
+          {{ taskId ? 'Update Task' : 'Assign Task' }}
+        </button>
+
+        <button
+          type="button"
+          routerLink="/employee/admin/tasks"
+          class="btn-secondary"
+        >
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

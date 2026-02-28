@@ -1,0 +1,149 @@
+<!-- <div class="login-container">
+  <h2>Login</h2>
+
+  <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+
+  <form (ngSubmit)="login()">
+    <div>
+      <label>Username</label>
+      <input type="text" [(ngModel)]="username" name="username" required>
+    </div>
+
+    <div>
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>
+    Don't have an account? <a routerLink="/auth/register">Register</a>
+  </p>
+</div> -->
+
+
+<div class="login-container">
+  <!-- Background Decoration -->
+  <div class="login-background">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+  </div>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <!-- Header Section -->
+    <div class="login-header">
+      <div class="logo">
+        <i class="fas fa-hotel"></i>
+        <span>Hotel<span class="logo-highlight">Hub</span></span>
+      </div>
+      <h1>Welcome Back</h1>
+      <p class="subtitle">Sign in to your account to continue</p>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMsg" class="error-alert">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>{{ errorMsg }}</span>
+      <button class="close-error" (click)="errorMsg = ''">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Login Form (Same logic) -->
+    <form (ngSubmit)="login()" class="login-form">
+      <!-- Username Input -->
+      <div class="form-group">
+        <label class="form-label">
+          <i class="fas fa-user"></i>
+          <span>Username</span>
+        </label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            [(ngModel)]="username" 
+            name="username" 
+            required
+            placeholder="Enter your username"
+            class="form-input"
+          >
+          <i class="input-icon fas fa-user-check"></i>
+        </div>
+        <div class="input-hint">Enter your registered username</div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <label class="form-label">
+          <i class="fas fa-lock"></i>
+          <span>Password</span>
+        </label>
+        <div class="input-wrapper">
+          <input 
+            type="password" 
+            [(ngModel)]="password" 
+            name="password" 
+            required
+            placeholder="Enter your password"
+            class="form-input"
+          >
+          <i class="input-icon fas fa-key"></i>
+        </div>
+        <div class="input-hint">Minimum 8 characters</div>
+      </div>
+
+      <!-- Remember Me & Forgot Password -->
+      <div class="form-options">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <!-- Submit Button (Same click event) -->
+      <button type="submit" class="submit-btn">
+        <span class="btn-text">Login</span>
+        <i class="fas fa-arrow-right btn-icon"></i>
+      </button>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">Or continue with</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Social Login Options -->
+      <div class="social-login">
+        <button type="button" class="social-btn google">
+          <i class="fab fa-google"></i>
+          <span>Google</span>
+        </button>
+        <button type="button" class="social-btn github">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- Footer Links (Same routerLink) -->
+    <div class="login-footer">
+      <p>
+        Don't have an account? 
+        <a routerLink="/auth/register" class="register-link">
+          <span>Create Account</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </p>
+      <p class="terms">
+        By continuing, you agree to our 
+        <a href="#">Terms of Service</a> and 
+        <a href="#">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</div>

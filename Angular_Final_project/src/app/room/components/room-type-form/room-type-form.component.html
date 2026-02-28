@@ -1,0 +1,17 @@
+<div class="room-type-form">
+  <h2>Create Room Type</h2>
+
+  <label>
+    Name:
+    <input type="text" [(ngModel)]="roomType.name" />
+  </label>
+
+  <label>
+    Description:
+    <textarea [(ngModel)]="roomType.description"></textarea>
+  </label>
+
+  <button (click)="createRoomType()" [disabled]="loading">
+    {{ loading ? 'Saving...' : 'Create' }}
+  </button>
+</div>

@@ -1,0 +1,30 @@
+<app-sidebar></app-sidebar>
+<div class="admin-stats">
+  <h2>Invoice Statistics</h2>
+
+  <div *ngIf="loading" class="loading">
+    Loading invoice stats...
+  </div>
+
+  <div class="stats-grid" *ngIf="!loading">
+    <div class="card total">
+      <h4>Total Invoices</h4>
+      <p>{{ stats.totalInvoices }}</p>
+    </div>
+
+    <div class="card warning">
+      <h4>Pending</h4>
+      <p>{{ stats.pendingInvoices }}</p>
+    </div>
+
+    <div class="card success">
+      <h4>Paid</h4>
+      <p>{{ stats.paidInvoices }}</p>
+    </div>
+
+    <div class="card danger">
+      <h4>Cancelled</h4>
+      <p>{{ stats.cancelledInvoices }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="admin-stats">
+
+  <h2>Payment Statistics</h2>
+
+  <div *ngIf="loading">Loading stats...</div>
+
+  <div class="stats-grid" *ngIf="!loading">
+
+    <div class="card">
+      <h4>Total Payments</h4>
+      <p>{{ stats.totalPayments }}</p>
+    </div>
+
+    <div class="card success">
+      <h4>Completed</h4>
+      <p>{{ stats.completedPayments }}</p>
+    </div>
+
+    <div class="card warning">
+      <h4>Pending</h4>
+      <p>{{ stats.pendingPayments }}</p>
+    </div>
+
+    <div class="card danger">
+      <h4>Cancelled</h4>
+      <p>{{ stats.cancelledPayments }}</p>
+    </div>
+
+    <div class="card revenue">
+      <h4>Total Revenue</h4>
+      <p>{{ stats.totalRevenue | currency:'BDT' }}</p>
+    </div>
+
+  </div>
+</div>

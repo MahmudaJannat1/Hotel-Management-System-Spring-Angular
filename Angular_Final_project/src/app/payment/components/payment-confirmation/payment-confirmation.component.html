@@ -1,0 +1,82 @@
+
+<section class="confirmation-hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <!-- <img src="assets/logo.png" class="hotel-logo">
+    <div class="stars">★ ★ ★ ★ ★</div> -->
+    <div class="sub-title">PAYMENT STATUS</div>
+    <h1 class="main-title">Confirmation</h1>
+  </div>
+</section>
+
+<div class="payment-confirmation-container">
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="loading">
+    <p>Loading payment details...</p>
+  </div>
+
+  <!-- SUCCESS -->
+  <div *ngIf="!loading && payment" class="confirmation-card">
+
+    <div class="success-header">
+      <div class="check">✓</div>
+      <h2>Payment Successful</h2>
+      <p>Your transaction has been completed securely</p>
+    </div>
+
+    <div class="invoice-box">
+
+      <div class="detail-row">
+        <span>Payment ID</span>
+        <strong>#{{ payment.id }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Booking ID</span>
+        <strong>#{{ payment.bookingId }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Payment Method</span>
+        <strong>{{ payment.method }}</strong>
+      </div>
+
+      <div class="detail-row">
+        <span>Payment Date</span>
+        <strong>{{ payment.paymentDate | date:'medium' }}</strong>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="detail-row total">
+        <span>Total Paid</span>
+        <strong>৳ {{ payment.amount }}</strong>
+      </div>
+
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <button class="btn primary" (click)="viewInvoice()">
+        My Payment History
+      </button>
+
+      <button class="btn outline" (click)="goToInvoice()">
+        View Invoice
+      </button>
+
+      <button class="btn secondary" routerLink="/">
+        Go to Home
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ERROR -->
+  <div *ngIf="!loading && !payment" class="error">
+    <p>❌ Unable to load payment information.</p>
+  </div>
+
+</div>
+

@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+
+<!-- HERO BACKGROUND -->
+<section class="booking-hero">
+  <div class="hero-overlay"></div>
+
+  <!-- FLOATING BOOKING FORM -->
+  <div class="page-container">
+    <div class="form-card">
+
+      <h2 class="title">
+        {{ isEditMode ? 'Update Booking' : 'Create Booking' }}
+      </h2>
+
+      <form [formGroup]="bookingForm" (ngSubmit)="saveBooking()">
+
+        <!-- BOOKING INFO -->
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label>Room Type</label>
+            <select formControlName="roomType">
+              <option value="">-- Select Room Type --</option>
+              <option *ngFor="let type of roomTypes" [value]="type">
+                {{ type }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Adults</label>
+            <input type="number" formControlName="adults" min="1">
+          </div>
+
+          <div class="form-group">
+            <label>Children</label>
+            <input type="number" formControlName="children" min="0">
+          </div>
+
+          <!-- CALENDAR STYLE -->
+          <div class="form-group calendar">
+            <label>Check-In</label>
+            <input type="date" formControlName="checkInDate">
+          </div>
+
+          <div class="form-group calendar">
+            <label>Check-Out</label>
+            <input type="date" formControlName="checkOutDate">
+          </div>
+
+        </div>
+
+        <!-- BOOKING ITEMS -->
+        <h3 class="sub-title">Booking Items</h3>
+
+        <div formArrayName="items" class="items-section">
+
+          <div
+            class="item-row"
+            *ngFor="let item of items.controls; let i = index"
+            [formGroupName]="i">
+
+            <select formControlName="itemName">
+              <option value="">-- Select Item --</option>
+              <option *ngFor="let opt of bookingItemOptions" [value]="opt">
+                {{ opt }}
+              </option>
+            </select>
+
+            <input type="number" formControlName="quantity" min="1" placeholder="Qty">
+
+            <select formControlName="category">
+              <option value="">Category</option>
+              <option value="FOOD">Food</option>
+              <option value="SERVICE">Service</option>
+              <option value="EXTRA">Extra</option>
+            </select>
+
+            <input type="text" formControlName="description" placeholder="Description">
+
+            <input
+              *ngIf="isEditMode"
+              type="number"
+              formControlName="price"
+              readonly>
+
+            <button type="button" class="btn-remove" (click)="removeItem(i)">
+              ✕
+            </button>
+          </div>
+
+          <p *ngIf="items.length === 0" class="empty-text">
+            No items added yet
+          </p>
+
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+          <button type="button" class="btn-secondary" (click)="addItem()">
+            + Add Item
+          </button>
+
+          <button type="submit" class="btn-primary" [disabled]="bookingForm.invalid">
+            {{ isEditMode ? 'Update Booking' : 'Save Booking' }}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>

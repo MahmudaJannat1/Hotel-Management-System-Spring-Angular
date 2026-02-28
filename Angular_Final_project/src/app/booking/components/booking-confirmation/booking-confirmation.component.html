@@ -1,0 +1,123 @@
+<!-- <div *ngIf="loading">Loading booking confirmation...</div>
+
+<div *ngIf="!loading" class="confirmation-card">
+
+  <h2>🎉 Booking Confirmed (Pending Payment)</h2>
+
+  <p><strong>Booking Code:</strong> {{ booking.bookingCode }}</p>
+  <p><strong>Customer:</strong> {{ booking.customerName }}</p>
+  <p><strong>Room:</strong> {{ booking.roomNumber }}</p>
+  <p><strong>Room Type:</strong> {{ booking.roomType }}</p> 
+
+  <p><strong>Adults:</strong> {{ booking.adults }}</p>
+  <p><strong>Children:</strong> {{ booking.children }}</p> 
+  <p><strong>Number of Nights:</strong> {{ booking.numberOfNights }}</p> 
+
+  <p>
+    <strong>Check-In:</strong> {{ booking.checkInDate | date:'mediumDate' }} <br>
+    <strong>Check-Out:</strong> {{ booking.checkOutDate | date:'mediumDate' }}
+  </p>
+
+  <p><strong>Status:</strong> {{ booking.status }}</p>
+
+  <h3>🧾 Booking Items</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of booking.items">
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price | currency:'BDT' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="proceedToPayment()">
+    Proceed to Payment 💳
+  </button>
+
+</div> -->
+
+<app-navbar></app-navbar>
+
+<!-- HERO BACKGROUND -->
+<section class="confirmation-hero">
+  <div class="hero-overlay"></div>
+
+  <!-- LOADING -->
+  <div *ngIf="loading" class="loading">
+    Loading booking confirmation...
+  </div>
+
+  <!-- CONFIRMATION CARD -->
+  <div *ngIf="!loading" class="confirmation-wrapper">
+
+    <div class="confirmation-card">
+
+      <h2 class="title">
+        Booking Confirmed
+        <span>(Pending Payment)</span>
+      </h2>
+
+      <!-- BASIC INFO -->
+      <div class="info-grid">
+        <p><strong>Booking Code:</strong> {{ booking.bookingCode }}</p>
+        <p><strong>Status:</strong> {{ booking.status }}</p>
+
+        <p><strong>Customer:</strong> {{ booking.customerName }}</p>
+        <p><strong>Room:</strong> {{ booking.roomNumber }}</p>
+
+        <p><strong>Room Type:</strong> {{ booking.roomType }}</p>
+        <p><strong>Nights:</strong> {{ booking.numberOfNights }}</p>
+
+        <p><strong>Adults:</strong> {{ booking.adults }}</p>
+        <p><strong>Children:</strong> {{ booking.children }}</p>
+
+        <p>
+          <strong>Check-In:</strong>
+          {{ booking.checkInDate | date:'mediumDate' }}
+        </p>
+
+        <p>
+          <strong>Check-Out:</strong>
+          {{ booking.checkOutDate | date:'mediumDate' }}
+        </p>
+      </div>
+
+      <!-- ITEMS -->
+      <h3 class="sub-title">Booking Items</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of booking.items">
+            <td>{{ item.itemName }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price | currency:'BDT' }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ACTION -->
+      <div class="actions">
+        <button (click)="proceedToPayment()">
+          Proceed to Payment 💳
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>

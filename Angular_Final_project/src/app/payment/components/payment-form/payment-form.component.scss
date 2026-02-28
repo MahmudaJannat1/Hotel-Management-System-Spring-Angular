@@ -1,0 +1,173 @@
+/* ================= HERO ================= */
+
+.payment-hero {
+  width: 100%;
+  height: 320px;
+  background: url('/assets/r1.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 110px;
+}
+
+.payment-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hotel-logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.stars {
+  color: #caa875;
+  letter-spacing: 5px;
+  margin-bottom: 8px;
+}
+
+.sub-title {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #e7d8b8;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 600;
+  padding-right: 150px;
+}
+
+/* ================= WRAPPER ================= */
+
+/* ================= LAYOUT ================= */
+
+.checkout-wrapper {
+  width: 90%;
+  margin: 90px auto 140px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+}
+
+/* ================= PAYMENT CARD ================= */
+
+.payment-card {
+  background: #fff;
+  padding: 45px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.payment-card h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* CARD ICONS */
+
+.card-icons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.card-icons img {
+  height: 32px;
+  opacity: 0.85;
+}
+
+/* FORM */
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  transition: .3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #6d562f;
+}
+
+/* BUTTON */
+
+.pay-btn {
+  width: 100%;
+  background: #6d562f;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+.pay-btn:hover:not(:disabled) {
+  background: #774704;
+}
+
+/* ================= INVOICE ================= */
+
+.invoice-panel {
+  background: #faf9f7;
+  padding: 40px;
+  border: 1px solid #eee;
+}
+
+.invoice-panel h3 {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-family: 'Times New Roman', serif;
+}
+
+.invoice-row,
+.invoice-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.invoice-divider {
+  height: 1px;
+  background: #ddd;
+  margin: 25px 0;
+}
+
+.invoice-total {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.secure-note {
+  font-size: 13px;
+  color: #777;
+  margin-top: 25px;
+}

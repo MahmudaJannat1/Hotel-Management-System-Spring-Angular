@@ -1,0 +1,86 @@
+<!-- <div class="room-list" *ngIf="rooms.length > 0">
+  <div class="room-card" *ngFor="let room of rooms">
+
+    <img
+      [src]="room.imageUrls && room.imageUrls.length > 0 ? room.imageUrls[0] : 'assets/deluxeroom.jpg'"
+      alt="Room Image"
+      class="room-thumbnail"
+    />
+
+    <div class="room-info">
+      <h3>
+        Room {{ room.roomNumber }}
+        <span>{{ room.roomType.name }}</span>
+      </h3>
+
+      <p>Status: <strong>{{ room.status }}</strong></p>
+      <p>Floor: {{ room.floor }}</p>
+      <p>Price: {{ room.pricePerNight|| 0  | currency:'BDT' }}</p>
+
+      <button (click)="viewDetails(room)">View Details</button>
+        <button class="book-btn" (click)="bookNow(room)">Book Now</button>
+
+
+    </div>
+
+  </div>
+</div> -->
+
+
+<app-navbar></app-navbar>
+
+<section class="rooms-hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1 class="main-title">Rooms & Suites</h1>
+  </div>
+</section>
+
+<ng-container *ngIf="rooms.length > 0">
+  <div class="room-wrapper" *ngFor="let room of rooms">
+
+    <!-- IMAGE SECTION WITH 3 DEFAULT IMAGES -->
+ <!-- IMAGE -->
+<div class="room-img">
+  <img
+    [src]="getRoomImage(room)"
+    alt="Room Image"
+  />
+</div>
+
+
+
+    <!-- CONTENT -->
+    <div class="room-content">
+      <h2>
+        Room {{ room.roomNumber }}
+        <span class="type">{{ room.roomType.name }}</span>
+      </h2>
+
+      <p class="desc">
+        Floor {{ room.floor }} • Status:
+        <strong>{{ room.status }}</strong>
+      </p>
+
+      <div class="price">
+        {{ room.pricePerNight || 0 | currency:'BDT' }} / night
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="buttons">
+        <button class="details" (click)="viewDetails(room)">Details →</button>
+        <button class="book-btn" (click)="bookNow(room)">BOOK NOW</button>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+
+
+
+
+
+
+
+  

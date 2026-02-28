@@ -1,0 +1,50 @@
+<app-sidebar></app-sidebar>
+<div class="cont">
+<h2 class="page-title">Housekeeping Dashboard</h2>
+
+<div *ngIf="stats; else loading" class="stats-grid">
+
+  <div class="card primary">
+    <div class="card-header">
+      <i class="fas fa-tasks"></i>
+      <h3>Total Tasks</h3>
+    </div>
+    <p class="count">{{ stats.totalTasks }}</p>
+    <button (click)="go('tasks')">View Tasks</button>
+  </div>
+
+  <div class="card warning">
+    <div class="card-header">
+      <i class="fas fa-soap"></i>
+      <h3>Pending Laundry</h3>
+    </div>
+    <p class="count">{{ stats.pendingLaundryRequests }}</p>
+    <button (click)="go('laundry')">Laundry Requests</button>
+  </div>
+
+  <div class="card danger">
+    <div class="card-header">
+      <i class="fas fa-tools"></i>
+      <h3>Pending Maintenance</h3>
+    </div>
+    <p class="count">{{ stats.pendingMaintenanceRequests }}</p>
+    <button (click)="go('maintenance')">Maintenance</button>
+  </div>
+
+  <div class="card success">
+    <div class="card-header">
+      <i class="fas fa-clipboard-list"></i>
+      <h3>Asset Logs</h3>
+    </div>
+    <p class="count">{{ stats.totalAssetMaintenanceLogs }}</p>
+    <button (click)="go('asset-log')">Asset Logs</button>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <div class="loading">Loading housekeeping stats...</div>
+</ng-template>
+
+</div>
+

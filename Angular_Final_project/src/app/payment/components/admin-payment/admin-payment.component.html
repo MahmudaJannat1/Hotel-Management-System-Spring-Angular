@@ -1,0 +1,40 @@
+<app-sidebar></app-sidebar>
+<h2 class="h2">Admin Payment Management</h2>
+<div *ngIf="loading" class="loading">Loading...</div>
+
+<div *ngIf="!loading">
+
+  <table class="payments-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Booking</th>
+        <!-- <th>User</th> -->
+        <th>Amount</th>
+        <!-- <th>Status</th> -->
+        <th>Method</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of payments">
+        <td>{{ p.id }}</td>
+        <td>{{ p.bookingId }}</td>
+        <td>{{ p.amount | currency:'BDT' }}</td>
+        <!-- <td>{{ p.status }}</td> -->
+        <td>{{ p.method }}</td>
+        <td>{{ p.paymentDate | date:'short' }}</td>
+        <td class="actions-cell">
+          <a [routerLink]="['/payment/invoice', p.invoiceId]" class="btn-link">View Invoice</a>
+          <button class="btn-cancel" (click)="cancelPayment(p.id)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="stats-button-container">
+    <button class="btn-primary" (click)="goToStats()">View Stats</button>
+  </div>
+
+</div>

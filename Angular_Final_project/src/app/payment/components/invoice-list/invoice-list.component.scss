@@ -1,0 +1,88 @@
+.admin-stats {
+  padding: 24px;
+  margin-left: 250px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+.admin-stats h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Loading */
+.loading {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card Base */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+}
+
+.card p {
+  margin-top: 12px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Color Variants */
+.card.total p {
+  color: #3b82f6;
+}
+
+.card.warning {
+  border-left: 6px solid #f59e0b;
+}
+.card.warning p {
+  color: #f59e0b;
+}
+
+.card.success {
+  border-left: 6px solid #10b981;
+}
+.card.success p {
+  color: #10b981;
+}
+
+.card.danger {
+  border-left: 6px solid #ef4444;
+}
+.card.danger p {
+  color: #ef4444;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .admin-stats {
+    padding: 16px;
+  }
+}

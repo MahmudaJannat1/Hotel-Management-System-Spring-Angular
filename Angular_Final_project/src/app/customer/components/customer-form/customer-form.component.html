@@ -1,0 +1,40 @@
+<app-sidebar></app-sidebar>
+<h3>Customer Create:</h3>
+<div class="content-wrapper">
+
+  <div class="form-card">
+
+    <h2 class="form-title">
+      <i class="fas fa-user-circle"></i>
+      {{ id ? 'Edit Customer' : 'Add Customer' }}
+    </h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input formControlName="name" type="text" placeholder="Enter full name" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" type="email" placeholder="Enter email" />
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input formControlName="phone" type="text" placeholder="Enter phone number" />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-save"></i>
+          {{ id ? 'Update Customer' : 'Create Customer' }}
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

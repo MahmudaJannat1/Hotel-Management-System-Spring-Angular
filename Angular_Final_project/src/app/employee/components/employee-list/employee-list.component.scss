@@ -1,0 +1,134 @@
+/* Content wrapper */
+.content-wrapper {
+  margin-left: 260px; /* sidebar width */
+  padding: 30px;
+  background: #f4f6f9;
+}
+
+/* Page header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Table card */
+.table-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 14px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.custom-table thead {
+  background: #f1f5f9;
+}
+
+.custom-table th {
+  font-weight: 700;
+  color: #374151;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Buttons */
+.btn-primary, .btn-edit, .btn-delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Add Employee button */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59,130,246,0.35);
+}
+
+/* Edit button */
+.btn-edit {
+  background: #fbbf24;
+  color: #1f2937;
+}
+
+.btn-edit:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+}
+
+/* Delete button */
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Empty state */
+.empty {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-wrapper {
+    margin-left: 0;
+    padding: 16px;
+  }
+  .custom-table {
+    min-width: 0;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

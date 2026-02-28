@@ -1,0 +1,60 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+
+  <div *ngIf="loading" class="loading">
+    <i class="fas fa-spinner fa-spin"></i> Loading dashboard...
+  </div>
+
+  <div *ngIf="!loading" class="dashboard">
+
+    <h2 class="dashboard-title">
+      <i class="fas fa-user-tie"></i>
+      Employee Admin Dashboard
+    </h2>
+
+    <div class="grid-cards">
+
+      <!-- EMPLOYEE -->
+      <div class="card employee-card">
+        <h3><i class="fas fa-users"></i> Employees</h3>
+        <p>Total: {{ data.totalEmployees }}</p>
+        <p>Active: {{ data.activeEmployees }}</p>
+        <p>Inactive: {{ data.inactiveEmployees }}</p>
+        <button (click)="goTo('/employee/admin/list')">Manage Employees</button>
+      </div>
+
+      <!-- ATTENDANCE -->
+      <div class="card attendance-card">
+        <h3><i class="fas fa-calendar-check"></i> Attendance (Today)</h3>
+        <p>Present: {{ data.todayPresent }}</p>
+        <p>Absent: {{ data.todayAbsent }}</p>
+        <button (click)="goTo('/employee/admin/attendance')">Attendance</button>
+      </div>
+
+      <!-- TASKS -->
+      <div class="card tasks-card">
+        <h3><i class="fas fa-tasks"></i> Tasks</h3>
+        <p>Total: {{ data.totalTasks }}</p>
+        <p>Pending: {{ data.pendingTasks }}</p>
+        <p>In Progress: {{ data.inProgressTasks }}</p>
+        <p>Completed: {{ data.completedTasks }}</p>
+        <button (click)="goTo('/employee/admin/tasks')">Manage Tasks</button>
+      </div>
+
+      <!-- PAYROLL -->
+      <div class="card payroll-card">
+        <h3><i class="fas fa-money-bill-wave"></i> Payroll</h3>
+        <p>Total Payrolls: {{ data.totalPayrolls }}</p>
+        <p>Paid: {{ data.paidPayrolls }}</p>
+        <p>Pending: {{ data.pendingPayrolls }}</p>
+        <p>Total Paid: {{ data.totalSalaryPaid | currency }}</p>
+        <button (click)="goTo('/employee/admin/payroll')">Manage Payroll</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
